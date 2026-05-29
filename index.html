@@ -34,7 +34,10 @@
               red: '#FF3B30',
               green: '#34C759',
               orange: '#FF9500',
-              purple: '#AF52DE'
+              purple: '#AF52DE',
+              islamicGreen: '#006400',
+              islamicGold: '#DAA520',
+              islamicBlue: '#1E3A8A'
             }
           },
           borderRadius: {
@@ -94,6 +97,29 @@
       border: 1px solid rgba(255, 255, 255, 0.06);
     }
     
+    .islamic-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23006400' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+    
+    .islamic-border {
+      border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 0 L100 0 L100 100 L0 100 Z' fill='none' stroke='%23006400' stroke-width='2'/%3E%3C/svg%3E") 1;
+    }
+    
+    .islamic-icon {
+      filter: drop-shadow(0 0 2px rgba(0, 100, 0, 0.5));
+    }
+    
+    .islamic-gradient {
+      background: linear-gradient(135deg, #006400, #DAA520, #1E3A8A);
+    }
+    
+    .islamic-text {
+      background: linear-gradient(135deg, #006400, #DAA520);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
     .ios-btn {
       transition: all 0.15s ease;
       cursor: pointer;
@@ -119,7 +145,7 @@
     }
     
     .toggle-switch.on {
-      background: #34C759;
+      background: #006400;
     }
     
     .toggle-switch .knob {
@@ -147,11 +173,11 @@
     
     .card-hover:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      box-shadow: 0 12px 40px rgba(0,100,0,0.15);
     }
     
     .dark .card-hover:hover {
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 12px 40px rgba(0,100,0,0.3);
     }
     
     .section-title {
@@ -167,11 +193,11 @@
       width: 60px;
       height: 4px;
       border-radius: 2px;
-      background: linear-gradient(135deg, #007AFF, #AF52DE);
+      background: linear-gradient(135deg, #006400, #DAA520);
     }
     
     .gradient-text {
-      background: linear-gradient(135deg, #007AFF, #AF52DE);
+      background: linear-gradient(135deg, #006400, #DAA520);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -182,7 +208,7 @@
     }
     
     .export-preview.selected {
-      box-shadow: 0 0 0 3px #007AFF;
+      box-shadow: 0 0 0 3px #006400;
     }
     
     @keyframes fadeInUp {
@@ -216,7 +242,7 @@
       right: 0;
       width: 0;
       height: 2px;
-      background: #007AFF;
+      background: #006400;
       transition: width 0.3s ease;
     }
     
@@ -234,12 +260,12 @@
     }
     
     ::-webkit-scrollbar-thumb {
-      background: rgba(0,0,0,0.2);
+      background: rgba(0,100,0,0.3);
       border-radius: 4px;
     }
     
     .dark ::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.2);
+      background: rgba(218,165,32,0.3);
     }
     
     .modal-overlay {
@@ -264,31 +290,29 @@
     @keyframes fadeOut {
       to { opacity: 0; transform: translateY(-10px); }
     }
-    
-    .data-source-badge {
-      animation: fadeInUp 0.3s ease forwards;
-    }
   </style>
 </head>
 
-<body class="bg-ios-bg dark:bg-[#000000] text-[#1C1C1E] dark:text-[#F5F5F7] transition-colors duration-300 min-h-screen overflow-x-hidden">
+<body class="bg-ios-bg dark:bg-[#000000] text-[#1C1C1E] dark:text-[#F5F5F7] transition-colors duration-300 min-h-screen overflow-x-hidden islamic-pattern">
 
   <!-- Navigation -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20">
         <a href="#hero" class="flex items-center gap-2">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white font-bold text-lg shadow-lg">
-            ع
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-ios-islamicGreen to-ios-islamicGold flex items-center justify-center text-white font-bold text-lg shadow-lg islamic-icon">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+            </svg>
           </div>
-          <span class="font-bold text-lg hidden sm:block gradient-text">حِكَم علوية</span>
+          <span class="font-bold text-lg hidden sm:block islamic-text">حِكَم علوية</span>
         </a>
         
         <div class="hidden md:flex items-center gap-8">
-          <a href="#quotes" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors">الحِكَم</a>
-          <a href="#poetry" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors">الشِّعر</a>
-          <a href="#excerpts" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors">المُقْتَطَفات</a>
-          <a href="#bios" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors">السِّيرة</a>
+          <a href="#quotes" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-islamicGreen dark:hover:text-ios-islamicGreen transition-colors">الحِكَم</a>
+          <a href="#poetry" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-islamicGreen dark:hover:text-ios-islamicGreen transition-colors">الشِّعر</a>
+          <a href="#excerpts" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-islamicGreen dark:hover:text-ios-islamicGreen transition-colors">المُقْتَطَفات</a>
+          <a href="#bios" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-islamicGreen dark:hover:text-ios-islamicGreen transition-colors">السِّيرة</a>
         </div>
         
         <div class="flex items-center gap-3">
@@ -303,51 +327,43 @@
 
   <!-- Hero Section -->
   <section id="hero" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30 -z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-green-50 via-yellow-50 to-blue-50 dark:from-green-950/30 dark:via-yellow-950/30 dark:to-blue-950/30 -z-10"></div>
     <div class="max-w-5xl mx-auto text-center">
       <div class="animate-fade-in">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light mb-6">
-          <span class="w-2 h-2 rounded-full bg-ios-green animate-pulse"></span>
-          <span class="text-sm font-medium text-gray-600 dark:text-gray-300">موسوعة حِكَم وشِعر</span>
+          <span class="w-2 h-2 rounded-full bg-ios-islamicGreen animate-pulse"></span>
+          <span class="text-sm font-medium text-gray-600 dark:text-gray-300">مُسْتَودَعُ الحِكَمِ العَلَوِيَّة</span>
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-          <span class="gradient-text">الإمام علي</span>
+          <span class="islamic-text">الإمام علي</span>
           <br>
           <span class="text-3xl sm:text-4xl md:text-5xl text-gray-700 dark:text-gray-200">عليه السلام</span>
         </h1>
         <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
-          كلمات خالدة من باب مدينة العلم، وأسد الله الغالب، تجمع بين الحكمة والبلاغة، والعمق والجمال
+          كَلِمَاتٌ خَالِدَةٌ مِنْ بَابِ مَدِينَةِ الْعِلْمِ، وَأَسَدِ اللَّهِ الْغَالِبِ، تَجْمَعُ بَيْنَ الْحِكْمَةِ وَالْبَلَاغَةِ، وَالْعُمْقِ وَالْجَمَالِ
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#quotes" class="ios-btn px-8 py-4 bg-ios-blue text-white rounded-2xl font-semibold text-base shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40">
-            استكشف الحِكَم
+          <a href="#quotes" class="ios-btn px-8 py-4 bg-ios-islamicGreen text-white rounded-2xl font-semibold text-base shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40">
+            اسْتَكْشِفَ الْحِكَمَ
           </a>
           <a href="#poetry" class="ios-btn px-8 py-4 glass rounded-2xl font-semibold text-base hover:bg-white/80 dark:hover:bg-gray-800/80">
-            اقرأ الشِّعر
+            اقْرَأَ الشِّعْرَ
           </a>
         </div>
       </div>
       
       <div class="grid grid-cols-3 gap-4 mt-16 max-w-lg mx-auto animate-fade-in animate-delay-200">
         <div class="glass rounded-ios p-4 text-center">
-          <div class="text-2xl font-bold gradient-text" id="quoteCount">0</div>
-          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">حكمة</div>
+          <div class="text-2xl font-bold islamic-text" id="quoteCount">0</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">حِكْمَة</div>
         </div>
         <div class="glass rounded-ios p-4 text-center">
-          <div class="text-2xl font-bold gradient-text" id="poetryCount">0</div>
-          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">قصيدة</div>
+          <div class="text-2xl font-bold islamic-text" id="poetryCount">0</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">قَصِيدَة</div>
         </div>
         <div class="glass rounded-ios p-4 text-center">
-          <div class="text-2xl font-bold gradient-text" id="excerptCount">0</div>
+          <div class="text-2xl font-bold islamic-text" id="excerptCount">0</div>
           <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">مُقْتَطَف</div>
-        </div>
-      </div>
-
-      <!-- Data Sources -->
-      <div id="dataSources" class="mt-8 hidden">
-        <div class="flex flex-wrap items-center justify-center gap-2">
-          <span class="text-xs text-gray-500 dark:text-gray-400 ml-2">مصادر البيانات:</span>
-          <div id="dataSourceBadges" class="flex flex-wrap gap-2"></div>
         </div>
       </div>
     </div>
@@ -358,7 +374,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">الحِكَم المَأثُورة</h2>
-        <p class="text-gray-600 dark:text-gray-400 mt-6">من جوامع الكلم وأبدع الحكَم</p>
+        <p class="text-gray-600 dark:text-gray-400 mt-6">مِنْ جَوَامِعِ الْكَلِمِ وَأَبْدَعِ الْحِكَمِ</p>
       </div>
       <div id="quotesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       </div>
@@ -366,11 +382,11 @@
   </section>
 
   <!-- Poetry Section -->
-  <section id="poetry" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-blue-50/30 dark:to-blue-950/20">
+  <section id="poetry" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-green-50/30 dark:to-green-950/20">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">الشِّعر العلَوي</h2>
-        <p class="text-gray-600 dark:text-gray-400 mt-6">من عيون الشعر العربي المنسوب إلى الإمام علي</p>
+        <p class="text-gray-600 dark:text-gray-400 mt-6">مِنْ عُيُونِ الشِّعْرِ الْعَرَبِيِّ الْمَنْسُوبِ إِلَى الْإِمَامِ عَلِيٍّ</p>
       </div>
       <div id="poetryContainer" class="space-y-8">
       </div>
@@ -382,7 +398,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">مُقْتَطَفات أدَبية</h2>
-        <p class="text-gray-600 dark:text-gray-400 mt-6">فِقرات أدبية بليغة من كلام الإمام</p>
+        <p class="text-gray-600 dark:text-gray-400 mt-6">فِقَرَاتٌ أَدَبِيَّةٌ بَلِيغَةٌ مِنْ كَلَامِ الْإِمَامِ</p>
       </div>
       <div id="excerptsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
       </div>
@@ -390,11 +406,11 @@
   </section>
 
   <!-- Bios Section -->
-  <section id="bios" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-purple-50/30 dark:to-purple-950/20">
+  <section id="bios" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-yellow-50/30 dark:to-yellow-950/20">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">سِيرَة ومَواقِف</h2>
-        <p class="text-gray-600 dark:text-gray-400 mt-6">من أقواله الجامعة في سيرته ومواقفه</p>
+        <p class="text-gray-600 dark:text-gray-400 mt-6">مِنْ أَقْوَالِهِ الْجَامِعَةِ فِي سِيرَتِهِ وَمَوَاقِفِهِ</p>
       </div>
       <div id="biosContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
       </div>
@@ -406,8 +422,8 @@
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="text-center md:text-right">
-          <h3 class="font-bold text-xl mb-2 gradient-text">حِكَم علوية</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">موسوعة حِكَم وشِعر الإمام علي عليه السلام</p>
+          <h3 class="font-bold text-xl mb-2 islamic-text">حِكَم علوية</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">مُسْتَودَعُ حِكَمٍ وَشِعْرٍ الْإِمَامِ عَلِيٍّ عليه السلام</p>
         </div>
         <div class="flex items-center gap-4">
           <a href="https://instagram.com/NE_7U" target="_blank" rel="noopener noreferrer" class="ios-btn flex items-center gap-2 px-5 py-3 glass rounded-2xl hover:bg-white/80 dark:hover:bg-gray-800/80">
@@ -425,7 +441,7 @@
         </div>
       </div>
       <div class="mt-8 pt-6 border-t border-gray-200 dark:border-white/10 text-center">
-        <p class="text-xs text-gray-400 dark:text-gray-500">© 2025 حِكَم علوية — جميع الحقوق محفوظة</p>
+        <p class="text-xs text-gray-400 dark:text-gray-500">© 2025 حِكَم علوية — جَمِيعُ الْحُقُوقِ مَحْفُوظَةٌ</p>
       </div>
     </div>
   </footer>
@@ -434,7 +450,7 @@
   <div id="exportModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 modal-overlay">
     <div class="glass rounded-ios-lg w-full max-w-lg p-6 sm:p-8 transform transition-all max-h-[90vh] overflow-y-auto">
       <div class="flex items-center justify-between mb-6">
-        <h3 class="text-xl font-bold">تصدير كصورة</h3>
+        <h3 class="text-xl font-bold">تَصْدِيرُ كَصُورَة</h3>
         <button id="closeExportModal" class="ios-btn w-10 h-10 rounded-full glass-light flex items-center justify-center">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -447,32 +463,32 @@
       
       <div class="space-y-6">
         <div>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">اختر نسبة العرض:</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">اِخْتَرْ نِسْبَةَ الْعَرْضِ:</p>
           <div class="grid grid-cols-3 gap-3">
             <button class="export-preview ios-btn glass-light rounded-xl p-4 text-center border-2 border-transparent selected" data-ratio="1:1" data-width="1080" data-height="1080">
-              <div class="w-8 h-8 mx-auto mb-2 border-2 border-ios-blue rounded bg-blue-50 dark:bg-blue-950/30"></div>
+              <div class="w-8 h-8 mx-auto mb-2 border-2 border-ios-islamicGreen rounded bg-green-50 dark:bg-green-950/30"></div>
               <span class="text-sm font-medium">1:1</span>
             </button>
             <button class="export-preview ios-btn glass-light rounded-xl p-4 text-center border-2 border-transparent" data-ratio="9:16" data-width="1080" data-height="1920">
-              <div class="w-5 h-8 mx-auto mb-2 border-2 border-ios-blue rounded bg-blue-50 dark:bg-blue-950/30"></div>
+              <div class="w-5 h-8 mx-auto mb-2 border-2 border-ios-islamicGreen rounded bg-green-50 dark:bg-green-950/30"></div>
               <span class="text-sm font-medium">9:16</span>
             </button>
             <button class="export-preview ios-btn glass-light rounded-xl p-4 text-center border-2 border-transparent" data-ratio="16:9" data-width="1920" data-height="1080">
-              <div class="w-8 h-5 mx-auto mb-2 border-2 border-ios-blue rounded bg-blue-50 dark:bg-blue-950/30"></div>
+              <div class="w-8 h-5 mx-auto mb-2 border-2 border-ios-islamicGreen rounded bg-green-50 dark:bg-green-950/30"></div>
               <span class="text-sm font-medium">16:9</span>
             </button>
           </div>
         </div>
         
-        <button id="generateExport" class="ios-btn w-full py-4 bg-ios-blue text-white rounded-2xl font-semibold shadow-lg shadow-blue-500/30">
-          توليد الصورة
+        <button id="generateExport" class="ios-btn w-full py-4 bg-ios-islamicGreen text-white rounded-2xl font-semibold shadow-lg shadow-green-500/30">
+          تَوْلِيدُ الصُّورَة
         </button>
         
         <div id="exportPreview" class="hidden">
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">معاينة الصورة:</p>
-          <img id="previewImage" class="w-full rounded-xl shadow-lg" alt="معاينة التصدير">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">مُعَايَنَةُ الصُّورَة:</p>
+          <img id="previewImage" class="w-full rounded-xl shadow-lg" alt="مُعَايَنَةُ التَّصْدِير">
           <a id="downloadLink" class="ios-btn block w-full py-4 mt-4 bg-ios-green text-white rounded-2xl font-semibold text-center shadow-lg shadow-green-500/30" download="imam-ali-wisdom.png">
-            تحميل الصورة
+            تَحْمِيلُ الصُّورَة
           </a>
         </div>
       </div>
@@ -621,11 +637,11 @@
         return `
           <div class="glass rounded-ios p-6 card-hover animate-fade-in" style="animation-delay: ${idx * 0.05}s; opacity: 0;">
             <div class="flex items-start gap-3 mb-4">
-              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-ios-islamicGreen to-ios-islamicGold flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
                 ${idx + 1}
               </div>
               <div class="w-8 h-8 flex-shrink-0">
-                <svg class="w-full h-full text-ios-blue opacity-30" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="w-full h-full text-ios-islamicGreen opacity-30" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                 </svg>
               </div>
@@ -636,13 +652,13 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                 </svg>
-                نسخ
+                نَسْخ
               </button>
               <button class="ios-btn export-btn flex items-center gap-2 px-4 py-2 rounded-xl glass-light text-sm font-medium text-gray-600 dark:text-gray-300" data-text="${escapedText}" data-type="quote">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                 </svg>
-                تصدير
+                تَصْدِير
               </button>
             </div>
           </div>
@@ -666,7 +682,7 @@
         return `
           <div class="glass rounded-ios-lg p-8 card-hover animate-fade-in" style="animation-delay: ${idx * 0.1}s; opacity: 0;">
             <div class="flex items-center justify-between mb-6">
-              <span class="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-ios-blue/10 to-ios-purple/10 text-ios-blue text-xs font-medium">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-ios-islamicGreen/10 to-ios-islamicGold/10 text-ios-islamicGreen text-xs font-medium">
                 ${poem.theme}
               </span>
               <div class="flex items-center gap-2">
@@ -710,7 +726,7 @@
         excerpt.lines.forEach(line => {
           linesHtml += `
             <div class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-ios-blue mt-2 flex-shrink-0"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-ios-islamicGreen mt-2 flex-shrink-0"></span>
               <p class="text-gray-700 dark:text-gray-300 leading-relaxed">${line}</p>
             </div>
           `;
@@ -718,7 +734,7 @@
         return `
           <div class="glass rounded-ios p-6 card-hover animate-fade-in" style="animation-delay: ${idx * 0.05}s; opacity: 0;">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold gradient-text">${excerpt.title}</h3>
+              <h3 class="text-lg font-bold islamic-text">${excerpt.title}</h3>
               <button class="ios-btn copy-btn p-2 rounded-xl glass-light" data-text="${escapedLines}">
                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
@@ -729,7 +745,7 @@
               ${linesHtml}
             </div>
             <button class="ios-btn export-btn w-full py-3 rounded-xl glass-light text-sm font-medium text-gray-600 dark:text-gray-300" data-text="${escapedLines}" data-type="excerpt">
-              تصدير كصورة
+              تَصْدِيرُ كَصُورَة
             </button>
           </div>
         `;
@@ -749,14 +765,14 @@
         return `
           <div class="glass rounded-ios p-6 card-hover animate-fade-in" style="animation-delay: ${idx * 0.05}s; opacity: 0;">
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-ios-orange to-ios-red flex items-center justify-center text-white">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-ios-islamicGold to-ios-islamicGreen flex items-center justify-center text-white">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                 </svg>
               </div>
               <h3 class="text-lg font-bold">${bio.title}</h3>
             </div>
-            <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 pr-4 border-r-2 border-ios-blue/30">
+            <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 pr-4 border-r-2 border-ios-islamicGreen/30">
               ${bio.quote}
             </blockquote>
             <div class="flex items-center gap-2">
@@ -764,13 +780,13 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                 </svg>
-                نسخ
+                نَسْخ
               </button>
               <button class="ios-btn export-btn flex items-center gap-2 px-4 py-2 rounded-xl glass-light text-sm font-medium text-gray-600 dark:text-gray-300" data-text="${escapedQuote}" data-type="bio">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                 </svg>
-                تصدير
+                تَصْدِير
               </button>
             </div>
           </div>
@@ -816,7 +832,7 @@
             const text = copyBtn.getAttribute('data-text');
             if (text) {
               navigator.clipboard.writeText(text).then(() => {
-                this.showToast('تم النسخ بنجاح');
+                this.showToast('تَمَّ النَّسْخُ بِنَجَاحٍ');
               }).catch(() => {
                 // Fallback for older browsers
                 const textarea = document.createElement('textarea');
@@ -827,9 +843,9 @@
                 textarea.select();
                 try {
                   document.execCommand('copy');
-                  this.showToast('تم النسخ بنجاح');
+                  this.showToast('تَمَّ النَّسْخُ بِنَجَاحٍ');
                 } catch (err) {
-                  this.showToast('فشل النسخ');
+                  this.showToast('فَشِلَ النَّسْخُ');
                 }
                 document.body.removeChild(textarea);
               });
@@ -956,7 +972,7 @@
         const isDark = document.documentElement.classList.contains('dark');
         const bgColor = isDark ? '#1C1C1E' : '#F8F9FA';
         const textColor = isDark ? '#FFFFFF' : '#1C1C1E';
-        const accentColor = isDark ? '#5AC8FA' : '#007AFF';
+        const accentColor = isDark ? '#006400' : '#006400';
         const subtextColor = isDark ? '#A1A1A6' : '#636366';
 
         const displayWidth = Math.min(parseInt(width), 600);
@@ -991,7 +1007,7 @@
               left: 0;
               right: 0;
               bottom: 0;
-              background: linear-gradient(135deg, rgba(0,122,255,0.08) 0%, rgba(175,82,222,0.08) 100%);
+              background: linear-gradient(135deg, rgba(0,100,0,0.08) 0%, rgba(218,165,32,0.08) 100%);
             "></div>
             <div style="
               position: relative;
@@ -1003,7 +1019,7 @@
                 width: ${parseInt(width) * 0.08}px;
                 height: ${parseInt(width) * 0.08}px;
                 margin: 0 auto ${parseInt(height) * 0.025}px;
-                background: linear-gradient(135deg, #007AFF, #AF52DE);
+                background: linear-gradient(135deg, #006400, #DAA520);
                 border-radius: ${parseInt(width) * 0.02}px;
                 display: flex;
                 align-items: center;
@@ -1051,13 +1067,14 @@
           downloadLink.href = dataUrl;
           previewDiv.classList.remove('hidden');
         } catch (error) {
-          UIEngine.showToast('حدث خطأ أثناء توليد الصورة');
+          UIEngine.showToast('حَدَثَ خَطَأ أَثْنَاءَ تَوْلِيدِ الصُّورَة');
         } finally {
           container.style.display = 'none';
         }
       }
     };
 
+    // ==================== INIT ====================
     document.addEventListener('DOMContentLoaded', () => {
       UIEngine.init();
     });
