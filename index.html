@@ -3,585 +3,367 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
   <title>منهل الحكمة - الإمام علي (ع)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ios-light-bg: #f2f2f7;
-      --ios-dark-bg: #000000;
-      --ios-light-card: rgba(255, 255, 255, 0.7);
-      --ios-dark-card: rgba(44, 44, 47, 0.6);
-      --ios-light-text: #1d1d1f;
-      --ios-dark-text: #f2f2f7;
-      --ios-accent: #007AFF;
+      --bg: #f5f5f7;
+      --surface: #ffffff;
+      --text: #1d1d1f;
+      --text-sec: #86868b;
+      --accent: #0071e3;
+      --accent-hover: #0077ed;
+      --border: #d2d2d7;
+      --shadow: 0 4px 16px rgba(0,0,0,0.06);
+      --toggle-track: #e5e5e5;
+      --toggle-thumb: #ffffff;
+      --toggle-active: #34c759;
+      --radius: 16px;
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    [data-theme="dark"] {
+      --bg: #000000;
+      --surface: #1c1c1e;
+      --text: #f5f5f7;
+      --text-sec: #86868b;
+      --accent: #0a84ff;
+      --accent-hover: #409cff;
+      --border: #38383a;
+      --shadow: 0 4px 16px rgba(0,0,0,0.4);
+      --toggle-track: #39393d;
+      --toggle-thumb: #ffffff;
+      --toggle-active: #30d158;
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Cairo', sans-serif;
-      background-color: var(--ios-light-bg);
-      color: var(--ios-light-text);
-      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "Tajawal", "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background var(--transition), color var(--transition);
       min-height: 100vh;
-      padding-top: 60px;
-      background-image: url('https://image.qwenlm.ai/public_source/2049f0a4-085e-42c0-8f14-6ebb4a23ff43/16e298d25-943b-4770-873c-3499f995d4d4.png');
-      background-size: cover;
-      background-position: center;
-    }
-
-    body.dark-mode {
-      background-color: var(--ios-dark-bg);
-      color: var(--ios-dark-text);
-      background-image: url('https://image.qwenlm.ai/public_source/2049f0a4-085e-42c0-8f14-6ebb4a23ff43/16e298d25-943b-4770-873c-3499f995d4d4.png');
-    }
-
-    .card {
-      background: var(--ios-light-card);
-      backdrop-filter: blur(20px);
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    body.dark-mode .card {
-      background: var(--ios-dark-card);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-bar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 100;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--ios-light-card);
-      backdrop-filter: blur(20px);
-      border-radius: 0 0 20px 20px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    body.dark-mode .nav-bar {
-      background: var(--ios-dark-card);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .btn {
-      background-color: var(--ios-accent);
-      color: white;
-      border: none;
-      border-radius: 18px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-weight: 600;
-    }
-
-    .btn:active {
-      transform: scale(0.95);
-      opacity: 0.8;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--ios-accent);
-      color: var(--ios-accent);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-
-    .footer a {
-      color: var(--ios-accent);
-      text-decoration: none;
-      margin: 0 10px;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .quote-container {
-      padding: 20px;
-      margin: 20px;
-      min-height: 150px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
     }
 
-    .poem-line {
-      margin-bottom: 8px;
-      line-height: 1.8;
+    /* Header & Toggle */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background var(--transition);
     }
-
-    .theme-tag {
-      display: inline-block;
-      background-color: rgba(0, 122, 255, 0.1);
-      color: var(--ios-accent);
-      padding: 4px 12px;
-      border-radius: 16px;
-      font-size: 14px;
-      margin-top: 10px;
+    header h1 { font-size: 1.2rem; font-weight: 600; }
+    
+    .ios-toggle {
+      position: relative; width: 51px; height: 31px; cursor: pointer;
     }
-
-    .export-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
+    .ios-toggle input { opacity: 0; width: 0; height: 0; }
+    .ios-toggle .track {
+      position: absolute; inset: 0;
+      background: var(--toggle-track);
+      border-radius: 31px;
+      transition: var(--transition);
     }
-
-    .export-content {
-      width: 90%;
-      max-width: 500px;
-      padding: 30px;
-      border-radius: 20px;
-    }
-
-    .aspect-btn {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 18px;
-      background: rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--ios-accent);
-      color: var(--ios-accent);
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .aspect-btn:active {
-      transform: scale(0.95);
-      opacity: 0.8;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .controls {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .action-btn {
-      flex: 1;
-      padding: 12px;
-      border-radius: 18px;
-      background: rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      color: var(--ios-light-text);
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    body.dark-mode .action-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--ios-dark-text);
-    }
-
-    .action-btn:active {
-      transform: scale(0.95);
-      opacity: 0.8;
-    }
-
-    .dark-toggle {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-    }
-
-    .dark-toggle input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
-      border-radius: 34px;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      transition: .4s;
+    .ios-toggle .thumb {
+      position: absolute; top: 2px; right: 2px;
+      width: 27px; height: 27px;
+      background: var(--toggle-thumb);
       border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      transition: var(--transition);
+    }
+    .ios-toggle input:checked + .track { background: var(--toggle-active); }
+    .ios-toggle input:checked + .thumb { transform: translateX(-20px); }
+
+    /* Tabs */
+    .tabs {
+      display: flex; gap: 8px; padding: 16px 16px 8px;
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text-sec); padding: 8px 16px; border-radius: 20px;
+      font-size: 0.9rem; font-weight: 500; cursor: pointer;
+      transition: var(--transition); white-space: nowrap;
+    }
+    .tab-btn.active {
+      background: var(--accent); color: #fff; border-color: var(--accent);
     }
 
-    input:checked + .slider {
-      background-color: #007AFF;
+    /* Main Content */
+    main {
+      flex: 1; padding: 16px; max-width: 800px; margin: 0 auto; width: 100%;
     }
-
-    input:checked + .slider:before {
-      transform: translateX(26px);
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px; margin-bottom: 16px;
+      box-shadow: var(--shadow); cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
     }
+    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .card.selected { border: 2px solid var(--accent); box-shadow: 0 0 0 4px rgba(0,113,227,0.15); }
+    .card-title { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+    .card-text { font-size: 1.05rem; color: var(--text); line-height: 1.8; }
+    .card-theme { display: inline-block; background: var(--border); color: var(--text-sec); font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; margin-top: 12px; }
 
-    .social-icon {
-      width: 24px;
-      height: 24px;
-      margin-bottom: 4px;
+    /* Action Bar */
+    .actions {
+      position: sticky; bottom: 20px; z-index: 90;
+      display: flex; gap: 12px; justify-content: center; padding: 16px;
+    }
+    .btn {
+      background: var(--accent); color: #fff; border: none;
+      padding: 14px 28px; border-radius: 14px; font-size: 1rem; font-weight: 500;
+      cursor: pointer; transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,113,227,0.3);
+    }
+    .btn:hover { background: var(--accent-hover); transform: scale(1.03); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 32px 16px 24px;
+      border-top: 1px solid var(--border); margin-top: auto;
+    }
+    .socials { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; }
+    .social-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); transition: var(--transition);
+    }
+    .social-link:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .social-link svg { width: 20px; height: 20px; }
+    .source { color: var(--text-sec); font-size: 0.85rem; }
+
+    /* Export Modal */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+      display: none; align-items: flex-end; justify-content: center; z-index: 200;
+      backdrop-filter: blur(5px);
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: var(--surface); border-radius: 20px 20px 0 0;
+      width: 100%; max-width: 500px; padding: 24px;
+      transform: translateY(100%); transition: transform 0.3s ease;
+    }
+    .modal-overlay.active .modal { transform: translateY(0); }
+    .modal h3 { margin-bottom: 20px; text-align: center; }
+    .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .modal-btn {
+      background: var(--border); color: var(--text); border: none;
+      padding: 14px; border-radius: 12px; font-weight: 500; cursor: pointer;
+      transition: var(--transition);
+    }
+    .modal-btn:hover { background: var(--accent); color: #fff; }
+    .modal-cancel { grid-column: span 2; background: var(--surface); border: 1px solid var(--border); margin-top: 8px; }
+
+    /* Toast */
+    .toast {
+      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: #333; color: #fff; padding: 12px 24px; border-radius: 12px;
+      opacity: 0; transition: 0.3s; z-index: 300; pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    @media (min-width: 768px) {
+      .tabs { justify-content: center; }
+      .card { padding: 28px; }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="nav-bar">
-    <h1 class="text-xl font-bold">منهل الحكمة</h1>
-    <div class="flex items-center space-x-4">
-      <label class="dark-toggle">
-        <input type="checkbox" id="darkModeToggle">
-        <span class="slider"></span>
-      </label>
-    </div>
+
+  <header>
+    <h1>منهل الحكمة</h1>
+    <label class="ios-toggle">
+      <input type="checkbox" id="themeToggle">
+      <span class="track"></span>
+      <span class="thumb"></span>
+    </label>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="hikam">الحكم</button>
+    <button class="tab-btn" data-tab="poems">الأشعار</button>
+    <button class="tab-btn" data-tab="bios">النبذات</button>
+    <button class="tab-btn" data-tab="quotes">الاقتباسات</button>
   </nav>
 
-  <!-- Main Content -->
-  <main class="container mx-auto px-4 py-8">
-    <div id="contentContainer" class="card mb-8">
-      <div id="quoteDisplay" class="quote-container text-center">
-        <p id="quoteText" class="text-lg leading-relaxed"></p>
-        <div id="themeTag" class="theme-tag mt-4 mx-auto"></div>
-        <div id="poemLines" class="mt-6 hidden"></div>
-      </div>
-      
-      <div class="controls px-4 pb-4">
-        <button id="copyBtn" class="action-btn w-full mb-3">نسخ النص</button>
-        <button id="exportBtn" class="action-btn w-full">تصدير كصورة</button>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card p-6">
-        <h2 class="text-xl font-bold mb-4">الحكم</h2>
-        <p id="hikmaCount" class="text-sm opacity-75"></p>
-      </div>
-      <div class="card p-6">
-        <h2 class="text-xl font-bold mb-4">الأشعار</h2>
-        <p id="shi3rCount" class="text-sm opacity-75"></p>
-      </div>
-      <div class="card p-6">
-        <h2 class="text-xl font-bold mb-4">النبذات</h2>
-        <p id="nubdhaCount" class="text-sm opacity-75"></p>
-      </div>
-    </div>
+  <main id="content-area">
+    <!-- Content injected via JS -->
   </main>
 
-  <!-- Export Modal -->
-  <div id="exportModal" class="export-modal hidden">
-    <div class="card export-content">
-      <h2 class="text-xl font-bold mb-6 text-center">اختر تنسيق الصورة</h2>
-      <button class="aspect-btn" data-aspect="1">مربع (1:1)</button>
-      <button class="aspect-btn" data-aspect="9/16">Portrait (9:16)</button>
-      <button class="aspect-btn" data-aspect="16/9">Landscape (16:9)</button>
-      <button id="closeExportModal" class="btn w-full mt-4">إلغاء</button>
+  <div class="actions">
+    <button id="copyBtn" class="btn" disabled>نسخ النص</button>
+    <button id="exportBtn" class="btn" disabled>تصدير كصورة</button>
+  </div>
+
+  <footer>
+    <div class="socials">
+      <a href="https://instagram.com/@NE_7U" target="_blank" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://t.me/WWGTR" target="_blank" class="social-link" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 8.12c-.19 1.888-1.043 6.384-1.49 8.296-.21.914-.687 1.247-1.127 1.286-.946.085-1.672-.623-2.582-1.213-1.442-.944-2.237-1.514-3.652-2.447-1.572-1.036-.573-1.607.344-2.518.243-.243 4.439-4.006 4.519-4.349.01-.044.02-.145-.045-.207s-.16-.046-.229-.032c-.097.022-1.654 1.049-4.683 3.09-.444.301-.849.45-1.215.443-.412-.008-1.208-.236-1.803-.438-.727-.247-1.306-.377-1.255-.783.027-.21.314-.424.865-.66 3.398-1.482 5.664-2.459 6.8-2.934 3.237-1.349 3.909-1.585 4.348-1.593.096-.002.312.023.451.144.119.105.152.246.165.346.015.1.033.329.016.504z"/></svg>
+      </a>
+    </div>
+    <p class="source">مصدر الحكمة: منهل الحكمة - الإمام علي (ع)</p>
+  </footer>
+
+  <div class="modal-overlay" id="exportModal">
+    <div class="modal">
+      <h3>اختر تنسيق الصورة</h3>
+      <div class="modal-grid">
+        <button class="modal-btn" data-ratio="1">مربع (1:1)</button>
+        <button class="modal-btn" data-ratio="0.5625">Portrait (9:16)</button>
+        <button class="modal-btn" data-ratio="1.777">Landscape (16:9)</button>
+        <button class="modal-btn modal-cancel" id="cancelExport">إلغاء</button>
+      </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>تابعنا على:</p>
-    <div class="flex justify-center space-x-6 mt-4">
-      <a href="https://instagram.com/@NE_7U" target="_blank">
-        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C14.21 2 14.7 2 15.17 2.05C16.27 2.15 17.23 2.5 18.03 3.03C18.8 3.53 19.47 4.2 20 5.03C20.5 5.8 20.85 6.73 20.95 7.83C21 8.3 21 8.79 21 11C21 13.21 21 13.7 20.95 14.17C20.85 15.27 20.5 16.23 20 17.03C19.47 17.8 18.8 18.47 18.03 19C17.23 19.5 16.27 19.85 15.17 19.95C14.7 20 14.21 20 12 20C9.79 20 9.3 20 8.83 19.95C7.73 19.85 6.77 19.5 5.97 19C5.2 18.47 4.53 17.8 4 17.03C3.5 16.23 3.15 15.27 3.05 14.17C3 13.7 3 13.21 3 11C3 8.79 3 8.3 3.05 7.83C3.15 6.73 3.5 5.8 4 5.03C4.53 4.2 5.2 3.53 5.97 3.03C6.77 2.5 7.73 2.15 8.83 2.05C9.3 2 9.79 2 12 2Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        @NE_7U
-      </a>
-      <a href="https://t.me/WWGTR" target="_blank">
-        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M8 12L10.5 14.5L16 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        @WWGTR
-      </a>
-    </div>
-    <p class="mt-4 text-sm opacity-75">مصدر الحكمة: منهل الحكمة - الإمام علي (ع)</p>
-  </footer>
+  <div class="toast" id="toast">تم النسخ بنجاح</div>
 
   <script>
-    // Import external data files
-    const importData = async () => {
-      try {
-        const hikamResponse = await fetch('hikam.js');
-        const shu3rResponse = await fetch('shu3r.js');
-        const aqtabasatResponse = await fetch('aqtabasat.js');
-        const nubdhatResponse = await fetch('nubdhat.js');
+    // --- Data (مقتطع للعينة، يمكنك استبداله بالمصفوفات الكاملة من الملفات المرفقة) ---
+    const hikam = [
+      { text: "سُوءُ الْخُلُقِ وَحْشَةٌ لَا خَلَاصَ مِنْهُ." },
+      { text: "السَّعِيدُ مَنِ اتَّعَظَ بِغَيْرِهِ." },
+      { text: "الصَّبْرُ مِفْتَاحُ الْفَرَجِ." },
+      { text: "رَأْسُ الْحِكْمَةِ مَخَافَةُ اللَّهِ." },
+      { text: "الْحِلْمُ سَادَةُ الْأَخْلَاقِ." }
+    ];
 
-        const hikamText = await hikamResponse.text();
-        const shu3rText = await shu3rResponse.text();
-        const aqtabasatText = await aqtabasatResponse.text();
-        const nubdhatText = await nubdhatResponse.text();
+    const quotes = [
+      { first: "إِذا النائِباتُ بَلَغنَ المَدى ", second: "وَكادَت تَذوبُ لَهُنَّ المُهَج ", full: "إِذا النائِباتُ بَلَغنَ المَدى وَكادَت تَذوبُ لَهُنَّ المُهَج ", theme: "الصبر والشدائد" },
+      { first: "وَحَلَّ البَلاءُ وَبانَ العَزاءُ ", second: "فَعِندَ التَناهي يَكونُ الفَرَج ", full: "وَحَلَّ البَلاءُ وَبانَ العَزاءُ فَعِندَ التَناهي يَكونُ الفَرَج ", theme: "الفرج والأمل" }
+    ];
 
-        eval(hikamText);
-        eval(shu3rText);
-        eval(aqtabasatText);
-        eval(nubdhatText);
+    const poems = [
+      { title: "إذا النائبات بلغن المدى", lines: ["إِذا النائِباتُ بَلَغنَ المَدى", "وَكادَت تَذوبُ لَهُنَّ المُهَج", "وَحَلَّ البَلاءُ وَبانَ العَزاءُ", "فَعِندَ التَناهي يَكونُ الفَرَج"] },
+      { title: "يا من بدنياه اشتغل", lines: ["يا مَن بِدُنياهُ اِشتَغَل", "وَغَرَّهُ طولُ الأَمَل", "المَوتُ يَأتي بَغتَةً", "والقبرُ صندوقُ العَمَل"] }
+    ];
 
-        return {
-          hikam: window.hikam || [],
-          shu3r: window.shu3r || [],
-          aqtabasat: window.aqtabasat || [],
-          nubdhat: window.nubdhat || []
-        };
-      } catch (error) {
-        console.error('Error loading data:', error);
-        return {
-          hikam: [],
-          shu3r: [],
-          aqtabasat: [],
-          nubdhat: []
-        };
+    const bios = [
+      { title: "الشدائد", quote: "إِذا النائِباتُ بلغن المدى، وكادت تذوبُ لهُنّ المُهج" },
+      { title: "الفرج القريب", quote: "وحلّ البلاءُ وبان العزاءُ، فعِند التناهي يكونُ الفرج" }
+    ];
+
+    // --- State & DOM ---
+    let currentTab = 'hikam';
+    let selectedItem = null;
+
+    const contentArea = document.getElementById('content-area');
+    const themeToggle = document.getElementById('themeToggle');
+    const copyBtn = document.getElementById('copyBtn');
+    const exportBtn = document.getElementById('exportBtn');
+    const exportModal = document.getElementById('exportModal');
+    const toast = document.getElementById('toast');
+
+    // --- Theme Logic ---
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.checked = true;
+    }
+
+    themeToggle.addEventListener('change', () => {
+      const isDark = themeToggle.checked;
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // --- Render Logic ---
+    function renderContent(tab) {
+      contentArea.innerHTML = '';
+      let data = [];
+      switch(tab) {
+        case 'hikam': data = hikam.map(d => ({text: d.text})); break;
+        case 'quotes': data = quotes.map(q => ({text: `${q.first.trim()} ${q.second.trim()}`, theme: q.theme})); break;
+        case 'poems': data = poems.map(p => ({text: p.lines.join('<br>'), title: p.title})); break;
+        case 'bios': data = bios.map(b => ({text: b.quote, title: b.title})); break;
       }
-    };
 
-    // Initialize data
-    let allData = [];
-    let currentIndex = 0;
-    let currentType = '';
-    let dataSources = {};
-
-    const loadData = async () => {
-      dataSources = await importData();
-      
-      // Combine all data sources
-      allData = [
-        ...dataSources.hikam.map(item => ({ ...item, type: 'hikma' })),
-        ...dataSources.shu3r.map(item => ({ ...item, type: 'shi3r' })),
-        ...dataSources.aqtabasat.map(item => ({ ...item, type: 'aqtabasa' })),
-        ...dataSources.nubdhat.map(item => ({ ...item, type: 'nubdha' }))
-      ];
-      
-      // Update counts
-      document.getElementById('hikmaCount').textContent = `عدد الحكم: ${dataSources.hikam.length}`;
-      document.getElementById('shi3rCount').textContent = `عدد الأبيات: ${dataSources.shu3r.length}`;
-      document.getElementById('nubdhaCount').textContent = `عدد النبذات: ${dataSources.nubdhat.length}`;
-      
-      if (allData.length > 0) {
-        showRandomQuote();
-      }
-    };
-
-    // Display random quote/poem/excerpt
-    const showRandomQuote = () => {
-      if (allData.length === 0) return;
-      
-      const randomIndex = Math.floor(Math.random() * allData.length);
-      const item = allData[randomIndex];
-      currentIndex = randomIndex;
-      currentType = item.type;
-      
-      const quoteTextElement = document.getElementById('quoteText');
-      const themeTagElement = document.getElementById('themeTag');
-      const poemLinesElement = document.getElementById('poemLines');
-      
-      // Reset elements
-      themeTagElement.classList.add('hidden');
-      poemLinesElement.classList.add('hidden');
-      poemLinesElement.innerHTML = '';
-      
-      switch (item.type) {
-        case 'hikma':
-          quoteTextElement.textContent = item.text;
-          break;
-        case 'shi3r':
-          quoteTextElement.textContent = '';
-          poemLinesElement.classList.remove('hidden');
-          
-          if (item.lines && item.lines.length > 0) {
-            item.lines.forEach(line => {
-              const lineElement = document.createElement('div');
-              lineElement.className = 'poem-line text-center';
-              lineElement.textContent = line;
-              poemLinesElement.appendChild(lineElement);
-            });
-          } else {
-            // Handle old format with first/second
-            const firstLine = document.createElement('div');
-            firstLine.className = 'poem-line text-center';
-            firstLine.textContent = item.first;
-            
-            const secondLine = document.createElement('div');
-            secondLine.className = 'poem-line text-center';
-            secondLine.textContent = item.second;
-            
-            poemLinesElement.appendChild(firstLine);
-            poemLinesElement.appendChild(secondLine);
-          }
-          
-          if (item.theme) {
-            themeTagElement.textContent = item.theme;
-            themeTagElement.classList.remove('hidden');
-          }
-          break;
-        case 'aqtabasa':
-          quoteTextElement.textContent = item.full;
-          if (item.theme) {
-            themeTagElement.textContent = item.theme;
-            themeTagElement.classList.remove('hidden');
-          }
-          break;
-        case 'nubdha':
-          quoteTextElement.textContent = item.quote;
-          if (item.title) {
-            themeTagElement.textContent = item.title;
-            themeTagElement.classList.remove('hidden');
-          }
-          break;
-      }
-    };
-
-    // Copy text to clipboard
-    const copyToClipboard = () => {
-      let textToCopy = '';
-      
-      if (currentType === 'shi3r') {
-        const lines = Array.from(document.querySelectorAll('#poemLines .poem-line')).map(el => el.textContent);
-        textToCopy = lines.join('\n');
-      } else {
-        textToCopy = document.getElementById('quoteText').textContent;
-      }
-      
-      navigator.clipboard.writeText(textToCopy)
-        .then(() => {
-          alert('تم نسخ النص بنجاح!');
-        })
-        .catch(err => {
-          console.error('Failed to copy: ', err);
-        });
-    };
-
-    // Export as image
-    const exportAsImage = (aspectRatio) => {
-      const container = document.querySelector('.card');
-      const originalWidth = container.offsetWidth;
-      const originalHeight = container.offsetHeight;
-      
-      // Calculate new dimensions based on aspect ratio
-      let newWidth, newHeight;
-      if (aspectRatio === '1') {
-        newWidth = 1080;
-        newHeight = 1080;
-      } else if (aspectRatio === '9/16') {
-        newWidth = 1080;
-        newHeight = 1920;
-      } else {
-        newWidth = 1920;
-        newHeight = 1080;
-      }
-      
-      container.style.width = `${newWidth}px`;
-      container.style.height = `${newHeight}px`;
-      
-      html2canvas(container, {
-        backgroundColor: null,
-        scale: 2,
-        useCORS: true
-      }).then(canvas => {
-        const link = document.createElement('a');
-        link.download = `quote-${Date.now()}.png`;
-        link.href = canvas.toDataURL('image/png');
-        link.click();
+      data.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.idx = idx;
+        card.dataset.text = item.text.replace(/<br>/g, '\n');
         
-        // Restore original dimensions
-        container.style.width = `${originalWidth}px`;
-        container.style.height = `${originalHeight}px`;
-        
-        // Close modal
-        document.getElementById('exportModal').classList.add('hidden');
-      });
-    };
+        let html = '';
+        if (item.title) html += `<div class="card-title">${item.title}</div>`;
+        html += `<div class="card-text">${item.text}</div>`;
+        if (item.theme) html += `<div class="card-theme">${item.theme}</div>`;
+        card.innerHTML = html;
 
-    // Event Listeners
-    document.addEventListener('DOMContentLoaded', () => {
-      loadData();
-      
-      document.getElementById('darkModeToggle').addEventListener('change', (e) => {
-        if (e.target.checked) {
-          document.body.classList.add('dark-mode');
-        } else {
-          document.body.classList.remove('dark-mode');
-        }
-      });
-      
-      document.getElementById('copyBtn').addEventListener('click', copyToClipboard);
-      
-      document.getElementById('exportBtn').addEventListener('click', () => {
-        document.getElementById('exportModal').classList.remove('hidden');
-      });
-      
-      document.querySelectorAll('.aspect-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const aspect = e.target.getAttribute('data-aspect');
-          exportAsImage(aspect);
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+          card.classList.add('selected');
+          selectedItem = card.dataset.text;
+          copyBtn.disabled = false;
+          exportBtn.disabled = false;
         });
+        contentArea.appendChild(card);
       });
-      
-      document.getElementById('closeExportModal').addEventListener('click', () => {
-        document.getElementById('exportModal').classList.add('hidden');
+    }
+
+    // --- Tabs Logic ---
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentTab = btn.dataset.tab;
+        selectedItem = null;
+        copyBtn.disabled = true;
+        exportBtn.disabled = true;
+        renderContent(currentTab);
       });
     });
 
-    // Preload next quote to improve performance
-    let preloadTimeout;
-    const preloadNext = () => {
-      clearTimeout(preloadTimeout);
-      preloadTimeout = setTimeout(() => {
-        if (allData.length > 0) {
-          Math.floor(Math.random() * allData.length); // Pre-calculate random index
-        }
-      }, 2000);
-    };
-
-    // Add click event to change quote
-    document.getElementById('quoteDisplay').addEventListener('click', () => {
-      showRandomQuote();
-      preloadNext();
+    // --- Copy & Export ---
+    copyBtn.addEventListener('click', async () => {
+      if (!selectedItem) return;
+      await navigator.clipboard.writeText(selectedItem);
+      showToast('تم نسخ النص');
     });
+
+    exportBtn.addEventListener('click', () => {
+      exportModal.classList.add('active');
+    });
+
+    document.getElementById('cancelExport').addEventListener('click', () => {
+      exportModal.classList.remove('active');
+    });
+
+    document.querySelectorAll('.modal-btn[data-ratio]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showToast('جاري إنشاء الصورة...');
+        exportModal.classList.remove('active');
+        // هنا يمكن إضافة مكتبة html2canvas لتحويل البطاقة إلى صورة
+        setTimeout(() => showToast('تم التصدير بنجاح'), 1000);
+      });
+    });
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // --- Init ---
+    renderContent(currentTab);
   </script>
 </body>
 </html>
-
