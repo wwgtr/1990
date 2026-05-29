@@ -1512,3 +1512,4 @@ const quotes = [
     theme: "خلود العالم"
   }
 ];
+window.aqtabasat = quotes;

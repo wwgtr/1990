@@ -5623,4 +5623,4 @@ const poems = [
     }
 ];
 
-export default poems;
+window.shu3r = poems;
