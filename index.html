@@ -1,632 +1,1067 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نهج الحكمة | الإمام علي بن أبي طالب (ع)</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        iosBlue: '#007AFF',
-                        iosGray: {
-                            light: '#F2F2F7',
-                            dark: '#1C1C1E'
-                        }
-                    },
-                    borderRadius: {
-                        'ios': '20px',
-                    },
-                    backdropBlur: {
-                        'ios': '20px',
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="موسوعة حِكَم وشِعر الإمام علي عليه السلام - كلمات خالدة من نهج البلاغة والروايات الشريفة">
+  <meta name="keywords" content="الإمام علي, نهج البلاغة, حِكَم, شعر, أقوال, إسلام">
+  <meta name="author" content="NE_7U">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="حِكَم الإمام علي عليه السلام">
+  <meta property="og:description" content="موسوعة شاملة من حِكَم وشِعر ومُقْتَطَفات الإمام علي بن أبي طالب عليه السلام">
+  <meta property="og:type" content="website">
+  <title>حِكَم الإمام علي عليه السلام</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            arabic: ['Cairo', 'system-ui', '-apple-system', 'sans-serif'],
+            ios: ['-apple-system', 'SF Pro Text', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            ios: {
+              blue: '#007AFF',
+              gray: '#8E8E93',
+              bg: '#F2F2F7',
+              card: 'rgba(255, 255, 255, 0.72)',
+              cardDark: 'rgba(28, 28, 30, 0.72)',
+              border: 'rgba(255, 255, 255, 0.3)',
+              borderDark: 'rgba(255, 255, 255, 0.08)',
+              red: '#FF3B30',
+              green: '#34C759',
+              orange: '#FF9500',
+              purple: '#AF52DE'
             }
+          },
+          borderRadius: {
+            ios: '20px',
+            'ios-lg': '28px'
+          },
+          backdropBlur: {
+            ios: '20px'
+          }
         }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;600;700&display=swap');
+      }
+    }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      direction: rtl;
+      text-align: right;
+    }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .dark .glass {
+      background: rgba(28, 28, 30, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .glass-light {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    
+    .dark .glass-light {
+      background: rgba(44, 44, 46, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    
+    .ios-btn {
+      transition: all 0.15s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    
+    .ios-btn:active {
+      opacity: 0.6;
+      transform: scale(0.97);
+    }
+    
+    .toggle-switch {
+      width: 51px;
+      height: 31px;
+      border-radius: 15.5px;
+      position: relative;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .toggle-switch.off {
+      background: #E9E9EA;
+    }
+    
+    .toggle-switch.on {
+      background: #34C759;
+    }
+    
+    .toggle-switch .knob {
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: white;
+      position: absolute;
+      top: 2px;
+      transition: right 0.3s ease, left 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .toggle-switch.off .knob {
+      right: 2px;
+    }
+    
+    .toggle-switch.on .knob {
+      left: 2px;
+    }
+    
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    
+    .dark .card-hover:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      right: 0;
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(135deg, #007AFF, #AF52DE);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #007AFF, #AF52DE);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .export-preview {
+      transition: all 0.3s ease;
+    }
+    
+    .export-preview.selected {
+      box-shadow: 0 0 0 3px #007AFF;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-in {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .animate-delay-100 { animation-delay: 0.1s; }
+    .animate-delay-200 { animation-delay: 0.2s; }
+    .animate-delay-300 { animation-delay: 0.3s; }
+    
+    .nav-link {
+      position: relative;
+      padding: 8px 0;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background: #007AFF;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+    }
+    
+    .dark ::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    .modal-overlay {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .dark .modal-overlay {
+      background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .toast {
+      animation: slideIn 0.3s ease, fadeOut 0.3s ease 1.7s forwards;
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes fadeOut {
+      to { opacity: 0; transform: translateY(-10px); }
+    }
+    
+    .data-source-badge {
+      animation: fadeInUp 0.3s ease forwards;
+    }
+  </style>
+</head>
+
+<body class="bg-ios-bg dark:bg-[#000000] text-[#1C1C1E] dark:text-[#F5F5F7] transition-colors duration-300 min-h-screen overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <a href="#hero" class="flex items-center gap-2">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white font-bold text-lg shadow-lg">
+            ع
+          </div>
+          <span class="font-bold text-lg hidden sm:block gradient-text">حِكَم علوية</span>
+        </a>
         
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Noto Sans Arabic", sans-serif;
-            -webkit-font-smoothing: antialiased;
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#quotes" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors">الحِكَم</a>
+          <a href="#poetry" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors">الشِّعر</a>
+          <a href="#excerpts" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors">المُقْتَطَفات</a>
+          <a href="#bios" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors">السِّيرة</a>
+        </div>
+        
+        <div class="flex items-center gap-3">
+          <span class="text-xs text-gray-500 dark:text-gray-400 hidden sm:block">وضع داكن</span>
+          <div id="themeToggle" class="toggle-switch off" role="switch" aria-checked="false" aria-label="تبديل الوضع الداكن">
+            <div class="knob"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30 -z-10"></div>
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="animate-fade-in">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light mb-6">
+          <span class="w-2 h-2 rounded-full bg-ios-green animate-pulse"></span>
+          <span class="text-sm font-medium text-gray-600 dark:text-gray-300">موسوعة حِكَم وشِعر</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+          <span class="gradient-text">الإمام علي</span>
+          <br>
+          <span class="text-3xl sm:text-4xl md:text-5xl text-gray-700 dark:text-gray-200">عليه السلام</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
+          كلمات خالدة من باب مدينة العلم، وأسد الله الغالب، تجمع بين الحكمة والبلاغة، والعمق والجمال
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#quotes" class="ios-btn px-8 py-4 bg-ios-blue text-white rounded-2xl font-semibold text-base shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40">
+            استكشف الحِكَم
+          </a>
+          <a href="#poetry" class="ios-btn px-8 py-4 glass rounded-2xl font-semibold text-base hover:bg-white/80 dark:hover:bg-gray-800/80">
+            اقرأ الشِّعر
+          </a>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-3 gap-4 mt-16 max-w-lg mx-auto animate-fade-in animate-delay-200">
+        <div class="glass rounded-ios p-4 text-center">
+          <div class="text-2xl font-bold gradient-text" id="quoteCount">0</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">حكمة</div>
+        </div>
+        <div class="glass rounded-ios p-4 text-center">
+          <div class="text-2xl font-bold gradient-text" id="poetryCount">0</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">قصيدة</div>
+        </div>
+        <div class="glass rounded-ios p-4 text-center">
+          <div class="text-2xl font-bold gradient-text" id="excerptCount">0</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">مُقْتَطَف</div>
+        </div>
+      </div>
+
+      <!-- Data Sources -->
+      <div id="dataSources" class="mt-8 hidden">
+        <div class="flex flex-wrap items-center justify-center gap-2">
+          <span class="text-xs text-gray-500 dark:text-gray-400 ml-2">مصادر البيانات:</span>
+          <div id="dataSourceBadges" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quotes Section -->
+  <section id="quotes" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">الحِكَم المَأثُورة</h2>
+        <p class="text-gray-600 dark:text-gray-400 mt-6">من جوامع الكلم وأبدع الحكَم</p>
+      </div>
+      <div id="quotesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      </div>
+    </div>
+  </section>
+
+  <!-- Poetry Section -->
+  <section id="poetry" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-blue-50/30 dark:to-blue-950/20">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">الشِّعر العلَوي</h2>
+        <p class="text-gray-600 dark:text-gray-400 mt-6">من عيون الشعر العربي المنسوب إلى الإمام علي</p>
+      </div>
+      <div id="poetryContainer" class="space-y-8">
+      </div>
+    </div>
+  </section>
+
+  <!-- Excerpts Section -->
+  <section id="excerpts" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">مُقْتَطَفات أدَبية</h2>
+        <p class="text-gray-600 dark:text-gray-400 mt-6">فِقرات أدبية بليغة من كلام الإمام</p>
+      </div>
+      <div id="excerptsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      </div>
+    </div>
+  </section>
+
+  <!-- Bios Section -->
+  <section id="bios" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-purple-50/30 dark:to-purple-950/20">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">سِيرَة ومَواقِف</h2>
+        <p class="text-gray-600 dark:text-gray-400 mt-6">من أقواله الجامعة في سيرته ومواقفه</p>
+      </div>
+      <div id="biosContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-white/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-right">
+          <h3 class="font-bold text-xl mb-2 gradient-text">حِكَم علوية</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">موسوعة حِكَم وشِعر الإمام علي عليه السلام</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://instagram.com/NE_7U" target="_blank" rel="noopener noreferrer" class="ios-btn flex items-center gap-2 px-5 py-3 glass rounded-2xl hover:bg-white/80 dark:hover:bg-gray-800/80">
+            <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span class="text-sm font-medium">@NE_7U</span>
+          </a>
+          <a href="https://t.me/WWGTR" target="_blank" rel="noopener noreferrer" class="ios-btn flex items-center gap-2 px-5 py-3 glass rounded-2xl hover:bg-white/80 dark:hover:bg-gray-800/80">
+            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+            <span class="text-sm font-medium">@WWGTR</span>
+          </a>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-gray-200 dark:border-white/10 text-center">
+        <p class="text-xs text-gray-400 dark:text-gray-500">© 2025 حِكَم علوية — جميع الحقوق محفوظة</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Export Modal -->
+  <div id="exportModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 modal-overlay">
+    <div class="glass rounded-ios-lg w-full max-w-lg p-6 sm:p-8 transform transition-all max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-xl font-bold">تصدير كصورة</h3>
+        <button id="closeExportModal" class="ios-btn w-10 h-10 rounded-full glass-light flex items-center justify-center">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div id="exportContent" class="hidden fixed left-0 top-0">
+      </div>
+      
+      <div class="space-y-6">
+        <div>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">اختر نسبة العرض:</p>
+          <div class="grid grid-cols-3 gap-3">
+            <button class="export-preview ios-btn glass-light rounded-xl p-4 text-center border-2 border-transparent selected" data-ratio="1:1" data-width="1080" data-height="1080">
+              <div class="w-8 h-8 mx-auto mb-2 border-2 border-ios-blue rounded bg-blue-50 dark:bg-blue-950/30"></div>
+              <span class="text-sm font-medium">1:1</span>
+            </button>
+            <button class="export-preview ios-btn glass-light rounded-xl p-4 text-center border-2 border-transparent" data-ratio="9:16" data-width="1080" data-height="1920">
+              <div class="w-5 h-8 mx-auto mb-2 border-2 border-ios-blue rounded bg-blue-50 dark:bg-blue-950/30"></div>
+              <span class="text-sm font-medium">9:16</span>
+            </button>
+            <button class="export-preview ios-btn glass-light rounded-xl p-4 text-center border-2 border-transparent" data-ratio="16:9" data-width="1920" data-height="1080">
+              <div class="w-8 h-5 mx-auto mb-2 border-2 border-ios-blue rounded bg-blue-50 dark:bg-blue-950/30"></div>
+              <span class="text-sm font-medium">16:9</span>
+            </button>
+          </div>
+        </div>
+        
+        <button id="generateExport" class="ios-btn w-full py-4 bg-ios-blue text-white rounded-2xl font-semibold shadow-lg shadow-blue-500/30">
+          توليد الصورة
+        </button>
+        
+        <div id="exportPreview" class="hidden">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">معاينة الصورة:</p>
+          <img id="previewImage" class="w-full rounded-xl shadow-lg" alt="معاينة التصدير">
+          <a id="downloadLink" class="ios-btn block w-full py-4 mt-4 bg-ios-green text-white rounded-2xl font-semibold text-center shadow-lg shadow-green-500/30" download="imam-ali-wisdom.png">
+            تحميل الصورة
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[110] hidden">
+    <div class="glass rounded-2xl px-6 py-3 shadow-xl">
+      <span id="toastMessage" class="text-sm font-medium"></span>
+    </div>
+  </div>
+
+  <script>
+    // ==================== DATA ENGINE ====================
+    const WisdomEngine = {
+      quotes: [
+        { text: "أفضَلُ الحَسَبِ حُسنُ الخُلُقِ" },
+        { text: "قِيمَةُ كُلِّ امرِئٍ ما يُحسِنُهُ" },
+        { text: "مَن عَرَفَ نَفسَهُ اشتَغَلَ بِإصلاحِها عَن عُيوبِ الناسِ" },
+        { text: "الدُّنيا دارُ مَمَرٍّ لا دارُ مَقَرٍّ" },
+        { text: "العَقلُ غَريزَةٌ والعِلمُ مُكتَسَبٌ" },
+        { text: "لا خَيرَ في الصَّمتِ عَنِ الحُكمِ كَما أنَّه لا خَيرَ في القَولِ بِالجَهلِ" },
+        { text: "مَن وَضَعَ نَفسَهُ مَواضِعَ التُّهَمَةِ فَلا يَلومَنَّ مَن أَساءَ بِهِ الظَّنَّ" },
+        { text: "آفَةُ العِلمِ النِّسيانُ وآفَةُ الكِتابِ الضَّياعُ" },
+        { text: "تاجُ المَروءَةِ التَّواضُعُ" },
+        { text: "مَن لَزِمَ الصِّدقَ نَما ومَن كَثُرَ خَناؤُهُ رَبا" },
+        { text: "خَيرُ الأُمورِ أوسَطُها" },
+        { text: "مَن ساءَ خُلُقُهُ عَذَّبَ نَفسَهُ" }
+      ],
+      
+      poetry: [
+        {
+          first: "قُم لِلعِلمِ أَو مُت لَهُ فَهَوى",
+          second: "لا تَستَحِ مِن عِلمٍ إِذا ما تَعَلَّما",
+          full: "قُم لِلعِلمِ أَو مُت لَهُ فَهَوى\nوَلا تَستَحِ مِن عِلمٍ إِذا ما تَعَلَّما\nوَما نَفَعَ العِلمُ الَّذي لَم يَكُن لَهُ\nمِنَ الفَهمِ ما يَحميهِ وَالفِهمُ أَعلَما",
+          theme: "العلم والتعلّم"
+        },
+        {
+          first: "وَدَعَتِ الدُّنيا فَأَقبَلتُ إِلى العُلى",
+          second: "وَتَرَكتُها حَسَراتِها وَأذاها",
+          full: "وَدَعَتِ الدُّنيا فَأَقبَلتُ إِلى العُلى\nوَتَرَكتُها حَسَراتِها وَأذاها\nوَأَسَأتُ بِالنَّاسِ الَّذينَ عَهِدتُهُم\nوَإِلى الَّذينَ رَجَوتُهُم وَأَراها",
+          theme: "الزهد في الدنيا"
+        },
+        {
+          first: "تَعُدُّ المَوتَ هَوناً وَالحَياةُ",
+          second: "عَزيزَةٌ وَأَنتَ بِها جَميلُ",
+          full: "تَعُدُّ المَوتَ هَوناً وَالحَياةُ\nعَزيزَةٌ وَأَنتَ بِها جَميلُ\nوَإِنَّ المَرءَ يَجمَعُهُ المَماتُ\nكَما تَجمَعُ الحَصى يَدُ الجَميلُ",
+          theme: "الموت والحياة"
+        },
+        {
+          first: "إِذا كانَتِ الأَيّامُ تُحدِثُ حادِثاً",
+          second: "فَلا تَأمَنِ الأَيّامَ أَن تَتَغَيَّرا",
+          full: "إِذا كانَتِ الأَيّامُ تُحدِثُ حادِثاً\nفَلا تَأمَنِ الأَيّامَ أَن تَتَغَيَّرا\nوَكُن كَالَّذي يَبني وَيَعلَمُ أَنَّهُ\nسَيَهدِمُ ما يَبني وَيُدرِكُهُ القَرا",
+          theme: "تقلّب الزمان"
+        }
+      ],
+      
+      excerpts: [
+        {
+          title: "وصية لتقوى الله",
+          lines: [
+            "أُوصِيكُمَا وَجَمِيعَ وَلَدِي وَأَهْلِي وَمَن بَلَغَهُ كِتَابِي بِتَقْوَى اللَّهِ رَبِّكُمْ",
+            "فَإِنَّكُمْ إِن تَتَّقُونَهُ فَإِنَّ اللَّهَ مَعَكُم وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ"
+          ]
+        },
+        {
+          title: "في الصبر",
+          lines: [
+            "الصَّبْرُ صَبْرَانِ: صَبْرٌ عَلى ما تَكْرَهُ وَصَبْرٌ عَلى ما تُحِبُّ",
+            "فَإِذا صَبَرَتَ عَلى ما تَكْرَهُ حَسُنَ صَبْرُكَ وَإِذا صَبَرَتَ عَلى ما تُحِبُّ فَذاكَ أَشَدُّ الصَّبرِ"
+          ]
+        },
+        {
+          title: "في العدالة",
+          lines: [
+            "لا تَكُنْ عَبدَ غَيرِكَ وَقَد جَعَلَكَ اللَّهُ حُرًّا",
+            "خَيْرُ الخَيْرِ ما نَفَعَ وَشَرُّ الشَّرِّ ما ضَرَّ"
+          ]
+        },
+        {
+          title: "في العلم",
+          lines: [
+            "مَن عَمِلَ بِما عَلِمَ وَرَّثَهُ اللَّهُ عِلمَ ما لَم يَعلَمْ",
+            "لا عِلمَ كَالتَّفَكُّرِ وَلا عِبادَةَ كَالوَرَعِ"
+          ]
+        }
+      ],
+      
+      bios: [
+        {
+          title: "باب مدينة العلم",
+          quote: "أَنا مَدينَةُ العِلمِ وَعَلِيٌّ بابُها، فَمَن أَرادَ المَدينَةَ فَلْيَأتِ البَابَ"
+        },
+        {
+          title: "أعدل الناس",
+          quote: "ما عُبِدَ اللَّهُ بِشَيءٍ أَفضَلَ مِنَ العَدلِ، وَلَو كَانَ العَدلُ رَجُلًا لَكانَ عَلِيًّا"
+        },
+        {
+          title: "سيد الشهداء",
+          quote: "سَيِّدُ الشُّهَداءِ حَمزَةُ وَحُسامُهُ عَليٌّ، وَأَنا وَهُما أَوَّلُ ما تَجولُ الرُّوحُ عِندَ العَرشِ يَومَ القيامَةِ"
+        },
+        {
+          title: "وصف الزهد",
+          quote: "لَقَد رَأَيتُ عَليًا وَمَا يَجِدُ أَحَدُنا ما يَأكُلُ مِنَ الشَّيءِ إِلّا قَليلًا، وَلَقَد رَأَيتُهُ وَإِنَّهُ لَيَأْكُلُ الخُبزَ وَالزَّيتَ وَيَلبَسُ الثَّوبَ الغَليظَ"
+        }
+      ]
+    };
+
+    // ==================== UI ENGINE ====================
+    const UIEngine = {
+      init() {
+        this.renderAll();
+        this.bindAllEvents();
+        this.initThemeToggle();
+        this.initExportModal();
+        this.initScrollSpy();
+        this.initNavbarScroll();
+      },
+
+      renderAll() {
+        this.renderQuotes();
+        this.renderPoetry();
+        this.renderExcerpts();
+        this.renderBios();
+        this.updateCounts();
+      },
+
+      updateCounts() {
+        document.getElementById('quoteCount').textContent = WisdomEngine.quotes.length;
+        document.getElementById('poetryCount').textContent = WisdomEngine.poetry.length;
+        document.getElementById('excerptCount').textContent = WisdomEngine.excerpts.length;
+      },
+
+      renderQuotes() {
+        const container = document.getElementById('quotesContainer');
+        let html = '';
+        WisdomEngine.quotes.forEach((q, idx) => {
+          html += this.createQuoteCard(q, idx);
+        });
+        container.innerHTML = html;
+      },
+
+      createQuoteCard(quote, idx) {
+        const escapedText = this.escapeHtml(quote.text);
+        return `
+          <div class="glass rounded-ios p-6 card-hover animate-fade-in" style="animation-delay: ${idx * 0.05}s; opacity: 0;">
+            <div class="flex items-start gap-3 mb-4">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                ${idx + 1}
+              </div>
+              <div class="w-8 h-8 flex-shrink-0">
+                <svg class="w-full h-full text-ios-blue opacity-30" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed mb-6 font-medium">${escapedText}</p>
+            <div class="flex items-center gap-2">
+              <button class="ios-btn copy-btn flex items-center gap-2 px-4 py-2 rounded-xl glass-light text-sm font-medium text-gray-600 dark:text-gray-300" data-text="${escapedText}">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                نسخ
+              </button>
+              <button class="ios-btn export-btn flex items-center gap-2 px-4 py-2 rounded-xl glass-light text-sm font-medium text-gray-600 dark:text-gray-300" data-text="${escapedText}" data-type="quote">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                تصدير
+              </button>
+            </div>
+          </div>
+        `;
+      },
+
+      renderPoetry() {
+        const container = document.getElementById('poetryContainer');
+        let html = '';
+        WisdomEngine.poetry.forEach((p, idx) => {
+          html += this.createPoetryCard(p, idx);
+        });
+        container.innerHTML = html;
+      },
+
+      createPoetryCard(poem, idx) {
+        const escapedFull = this.escapeHtml(poem.full);
+        const escapedFirst = this.escapeHtml(poem.first);
+        const escapedSecond = this.escapeHtml(poem.second);
+        const escapedFullPre = this.escapeHtmlForPre(poem.full);
+        return `
+          <div class="glass rounded-ios-lg p-8 card-hover animate-fade-in" style="animation-delay: ${idx * 0.1}s; opacity: 0;">
+            <div class="flex items-center justify-between mb-6">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-ios-blue/10 to-ios-purple/10 text-ios-blue text-xs font-medium">
+                ${poem.theme}
+              </span>
+              <div class="flex items-center gap-2">
+                <button class="ios-btn copy-btn w-10 h-10 rounded-xl glass-light flex items-center justify-center" data-text="${escapedFull}">
+                  <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                </button>
+                <button class="ios-btn export-btn w-10 h-10 rounded-xl glass-light flex items-center justify-center" data-text="${escapedFull}" data-type="poetry">
+                  <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="text-center space-y-4 mb-6">
+              <p class="text-xl sm:text-2xl font-bold leading-relaxed text-gray-800 dark:text-gray-100">${poem.first}</p>
+              <p class="text-xl sm:text-2xl font-bold leading-relaxed text-gray-800 dark:text-gray-100">${poem.second}</p>
+            </div>
+            <div class="w-full h-px bg-gradient-to-l from-transparent via-gray-300 dark:via-gray-600 to-transparent"></div>
+            <div class="mt-6">
+              <pre class="text-base leading-loose text-gray-600 dark:text-gray-400 font-arabic whitespace-pre-wrap text-center">${escapedFullPre}</pre>
+            </div>
+          </div>
+        `;
+      },
+
+      renderExcerpts() {
+        const container = document.getElementById('excerptsContainer');
+        let html = '';
+        WisdomEngine.excerpts.forEach((e, idx) => {
+          html += this.createExcerptCard(e, idx);
+        });
+        container.innerHTML = html;
+      },
+
+      createExcerptCard(excerpt, idx) {
+        const joinedLines = excerpt.lines.join(' ');
+        const escapedLines = this.escapeHtml(joinedLines);
+        let linesHtml = '';
+        excerpt.lines.forEach(line => {
+          linesHtml += `
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-ios-blue mt-2 flex-shrink-0"></span>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">${line}</p>
+            </div>
+          `;
+        });
+        return `
+          <div class="glass rounded-ios p-6 card-hover animate-fade-in" style="animation-delay: ${idx * 0.05}s; opacity: 0;">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-bold gradient-text">${excerpt.title}</h3>
+              <button class="ios-btn copy-btn p-2 rounded-xl glass-light" data-text="${escapedLines}">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="space-y-3 mb-6">
+              ${linesHtml}
+            </div>
+            <button class="ios-btn export-btn w-full py-3 rounded-xl glass-light text-sm font-medium text-gray-600 dark:text-gray-300" data-text="${escapedLines}" data-type="excerpt">
+              تصدير كصورة
+            </button>
+          </div>
+        `;
+      },
+
+      renderBios() {
+        const container = document.getElementById('biosContainer');
+        let html = '';
+        WisdomEngine.bios.forEach((b, idx) => {
+          html += this.createBioCard(b, idx);
+        });
+        container.innerHTML = html;
+      },
+
+      createBioCard(bio, idx) {
+        const escapedQuote = this.escapeHtml(bio.quote);
+        return `
+          <div class="glass rounded-ios p-6 card-hover animate-fade-in" style="animation-delay: ${idx * 0.05}s; opacity: 0;">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-ios-orange to-ios-red flex items-center justify-center text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold">${bio.title}</h3>
+            </div>
+            <blockquote class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 pr-4 border-r-2 border-ios-blue/30">
+              ${bio.quote}
+            </blockquote>
+            <div class="flex items-center gap-2">
+              <button class="ios-btn copy-btn flex items-center gap-2 px-4 py-2 rounded-xl glass-light text-sm font-medium text-gray-600 dark:text-gray-300" data-text="${escapedQuote}">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                نسخ
+              </button>
+              <button class="ios-btn export-btn flex items-center gap-2 px-4 py-2 rounded-xl glass-light text-sm font-medium text-gray-600 dark:text-gray-300" data-text="${escapedQuote}" data-type="bio">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                تصدير
+              </button>
+            </div>
+          </div>
+        `;
+      },
+
+      escapeHtml(text) {
+        return text
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      },
+
+      escapeHtmlForPre(text) {
+        return text
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      },
+
+      showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        const toastInner = toast.querySelector('div');
+        toastMessage.textContent = message;
+        toast.classList.remove('hidden');
+        toastInner.classList.remove('toast');
+        void toastInner.offsetWidth;
+        toastInner.classList.add('toast');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 2200);
+      },
+
+      bindAllEvents() {
+        // Event delegation for copy buttons
+        document.addEventListener('click', (e) => {
+          const copyBtn = e.target.closest('.copy-btn');
+          if (copyBtn) {
+            e.preventDefault();
+            const text = copyBtn.getAttribute('data-text');
+            if (text) {
+              navigator.clipboard.writeText(text).then(() => {
+                this.showToast('تم النسخ بنجاح');
+              }).catch(() => {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                  document.execCommand('copy');
+                  this.showToast('تم النسخ بنجاح');
+                } catch (err) {
+                  this.showToast('فشل النسخ');
+                }
+                document.body.removeChild(textarea);
+              });
+            }
+            return;
+          }
+
+          // Event delegation for export buttons
+          const exportBtn = e.target.closest('.export-btn');
+          if (exportBtn) {
+            e.preventDefault();
+            const text = exportBtn.getAttribute('data-text');
+            const type = exportBtn.getAttribute('data-type') || 'quote';
+            if (text) {
+              ExportEngine.openModal(text, type);
+            }
+            return;
+          }
+
+          // Export modal ratio selection
+          const exportPreviewBtn = e.target.closest('.export-preview');
+          if (exportPreviewBtn) {
+            document.querySelectorAll('.export-preview').forEach(btn => btn.classList.remove('selected'));
+            exportPreviewBtn.classList.add('selected');
+            return;
+          }
+        });
+      },
+
+      initThemeToggle() {
+        const toggle = document.getElementById('themeToggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+          toggle.classList.remove('off');
+          toggle.classList.add('on');
         }
 
-        .ios-glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+        toggle.addEventListener('click', () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          toggle.classList.toggle('on', isDark);
+          toggle.classList.toggle('off', !isDark);
+          toggle.setAttribute('aria-checked', isDark);
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+      },
 
-        .dark .ios-glass {
-            background: rgba(28, 28, 30, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+      initExportModal() {
+        const modal = document.getElementById('exportModal');
+        const closeBtn = document.getElementById('closeExportModal');
+        const generateBtn = document.getElementById('generateExport');
 
-        .ios-card {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        closeBtn.addEventListener('click', () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        });
 
-        .ios-card:active {
-            transform: scale(0.97);
-        }
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+          }
+        });
 
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #d1d1d6;
-            border-radius: 10px;
-        }
-        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #3a3a3c;
-        }
+        generateBtn.addEventListener('click', () => {
+          const selected = document.querySelector('.export-preview.selected');
+          if (selected) {
+            ExportEngine.generate(selected.dataset.width, selected.dataset.height);
+          }
+        });
+      },
 
-        /* iOS Toggle Switch */
-        .switch {
+      initScrollSpy() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+              });
+            }
+          });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+
+        sections.forEach(section => observer.observe(section));
+      },
+
+      initNavbarScroll() {
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 100) {
+            navbar.classList.add('shadow-md');
+          } else {
+            navbar.classList.remove('shadow-md');
+          }
+        });
+      }
+    };
+
+    // ==================== EXPORT ENGINE ====================
+    const ExportEngine = {
+      currentText: '',
+      currentType: '',
+
+      openModal(text, type) {
+        this.currentText = text;
+        this.currentType = type;
+        const modal = document.getElementById('exportModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.getElementById('exportPreview').classList.add('hidden');
+      },
+
+      async generate(width, height) {
+        const container = document.getElementById('exportContent');
+        const previewDiv = document.getElementById('exportPreview');
+        const previewImg = document.getElementById('previewImage');
+        const downloadLink = document.getElementById('downloadLink');
+
+        const isDark = document.documentElement.classList.contains('dark');
+        const bgColor = isDark ? '#1C1C1E' : '#F8F9FA';
+        const textColor = isDark ? '#FFFFFF' : '#1C1C1E';
+        const accentColor = isDark ? '#5AC8FA' : '#007AFF';
+        const subtextColor = isDark ? '#A1A1A6' : '#636366';
+
+        const displayWidth = Math.min(parseInt(width), 600);
+        const displayHeight = Math.min(parseInt(height), 800);
+
+        const formattedText = this.currentText.replace(/\n/g, '<br>');
+
+        container.style.display = 'block';
+        container.style.visibility = 'hidden';
+        container.style.position = 'fixed';
+        container.style.left = '-9999px';
+        container.style.top = '0';
+
+        container.innerHTML = `
+          <div id="exportCanvas" style="
+            width: ${parseInt(width)}px;
+            height: ${parseInt(height)}px;
+            background: ${bgColor};
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: ${parseInt(width) * 0.08}px;
+            font-family: 'Cairo', system-ui, sans-serif;
+            direction: rtl;
             position: relative;
-            display: inline-block;
-            width: 51px;
-            height: 31px;
-        }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #e9e9eb;
-            transition: .4s;
-            border-radius: 34px;
-        }
-        .dark .slider { background-color: #39393d; }
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 27px; width: 27px;
-            left: 2px; bottom: 2px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
-        input:checked + .slider { background-color: #34c759; }
-        input:checked + .slider:before { transform: translateX(20px); }
-    </style>
-<script src="https://felo.ai/js/iframe.js?v=1780063752396"></script>
- <style>
-* {
-  scrollbar-width: thin !important;
-  scrollbar-color: #bfc5ce transparent !important;
-}
-*::-webkit-scrollbar {
-  width: 6px !important;
-}
-*::-webkit-scrollbar-thumb {
-  background-color: #bfc5ce !important;
-  border-radius: 9999px !important;
-}
-*::-webkit-scrollbar-track {
-  background-color: transparent !important;
-  border-radius: 9999px !important;
-}
-</style></head>
-<body class="bg-iosGray-light dark:bg-black text-black dark:text-white transition-colors duration-500 overflow-x-hidden custom-scrollbar"><body class="bg-iosGray-light dark:bg-black text-black dark:text-white transition-colors duration-500 overflow-x-hidden custom-scrollbar" contenteditable="false" spellcheck="false">
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 ios-glass px-6 py-4 flex justify-between items-center border-b">
-        <div class="flex items-center space-x-4 space-x-reverse">
-            <div class="w-10 h-10 bg-iosBlue rounded-xl flex items-center justify-center text-white shadow-lg">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-element-id="90661a6c-1618-4ef2-ba7b-66dcf7b08b46"><path d="M12 3l1.912 5.813H20l-4.912 3.575L17 19l-5-3.625L7 19l1.912-6.612L4 8.813h6.088L12 3z" style="pointer-events: none;"></path></svg>
+            overflow: hidden;
+          ">
+            <div style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: linear-gradient(135deg, rgba(0,122,255,0.08) 0%, rgba(175,82,222,0.08) 100%);
+            "></div>
+            <div style="
+              position: relative;
+              z-index: 1;
+              text-align: center;
+              max-width: 85%;
+            ">
+              <div style="
+                width: ${parseInt(width) * 0.08}px;
+                height: ${parseInt(width) * 0.08}px;
+                margin: 0 auto ${parseInt(height) * 0.025}px;
+                background: linear-gradient(135deg, #007AFF, #AF52DE);
+                border-radius: ${parseInt(width) * 0.02}px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: ${parseInt(width) * 0.04}px;
+                font-weight: bold;
+              ">ع</div>
+              <div style="
+                font-size: ${Math.min(parseInt(width), parseInt(height)) * 0.035}px;
+                line-height: 2.2;
+                color: ${textColor};
+                font-weight: 600;
+                margin-bottom: ${parseInt(height) * 0.02}px;
+              ">${formattedText}</div>
+              <div style="
+                width: ${parseInt(width) * 0.06}px;
+                height: 2px;
+                background: ${accentColor};
+                margin: 0 auto ${parseInt(height) * 0.015}px;
+                border-radius: 1px;
+              "></div>
+              <p style="
+                font-size: ${Math.min(parseInt(width), parseInt(height)) * 0.02}px;
+                color: ${subtextColor};
+              ">الإمام علي عليه السلام</p>
             </div>
-            <span class="text-xl font-bold tracking-tight" data-element-id="c446e73f-9cb0-4c39-b986-48b18d6d1a31">حكم الأمام علي</span>
-        </div>
+          </div>
+        `;
 
-        <div class="hidden md:flex items-center space-x-8 space-x-reverse">
-            <a href="#home" class="hover:text-iosBlue transition-colors font-medium">الرئيسية</a>
-            <a href="#quotes" class="hover:text-iosBlue transition-colors font-medium">الاقتباسات</a>
-            <a href="#poems" class="hover:text-iosBlue transition-colors font-medium">الأشعار</a>
-            <a href="#sayings" class="hover:text-iosBlue transition-colors font-medium">الأقوال</a>
-            <a href="#bios" class="hover:text-iosBlue transition-colors font-medium">النبذات</a>
-        </div>
+        try {
+          const canvasEl = container.querySelector('#exportCanvas');
+          const canvas = await html2canvas(canvasEl, {
+            width: parseInt(width),
+            height: parseInt(height),
+            scale: 1,
+            useCORS: true,
+            backgroundColor: null,
+            logging: false,
+            allowTaint: true
+          });
 
-        <div class="flex items-center space-x-4 space-x-reverse">
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()" data-element-id="a23f068b-84a7-4007-ae96-859cff54053f">
-                <span class="slider" data-element-id="0e613a9d-7f5b-4228-b22e-2776fd2fcb2e"></span>
-            </label>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-24 px-6 text-center">
-        <div class="max-w-4xl space-y-8">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight">
-                كلامٌ كأنه <span class="text-iosBlue">نورٌ</span> يضيء الدروب
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-500 dark:text-gray-400 font-light max-w-2xl mx-auto leading-relaxed" data-element-id="b1aa14d7-503a-4c88-a62d-23600e7e51e2">
-                موسوعة رقمية شاملة لأقوال وحكم وأشعار أمير المؤمنين علي بن أبي طالب (عليه السلام).
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#quotes" class="bg-iosBlue text-white px-8 py-4 rounded-ios font-semibold shadow-xl hover:opacity-90 transition-all flex items-center gap-2">
-                    تصفح الحكمة
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" style="pointer-events: none;"></path></svg>
-                </a>
-                <a href="#bios" class="ios-glass px-8 py-4 rounded-ios font-semibold hover:bg-white/90 dark:hover:bg-white/10 transition-all">
-                    عن الإمام (ع)
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Data Containers -->
-    <div class="max-w-6xl mx-auto px-6 space-y-32 pb-32">
-        
-        <!-- Quotes Section -->
-        <section id="quotes" class="space-y-12">
-            <div class="flex items-end justify-between">
-                <div>
-                    <h2 class="text-3xl font-bold">الاقتباسات</h2>
-                    <p class="text-gray-500 mt-2">درر منثورة في الأخلاق والاجتماع</p>
-                </div>
-            </div>
-            <div id="quotes-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="ios-glass p-8 rounded-ios ios-card space-y-4">
-                    <h3 class="text-iosBlue font-bold text-lg">في قيمة العلم</h3>
-                    <div class="space-y-2 text-xl font-medium leading-relaxed">
-                        <p>"العلم خير من المال، العلم يحرسك وأنت تحرس المال."</p><p>"والمال تنقصه النفقة، والعلم يزكو على الإنفاق."</p>
-                    </div>
-                    <div class="flex gap-2 pt-4">
-                        <button onclick="copyText('العلم خير من المال، العلم يحرسك وأنت تحرس المال. والمال تنقصه النفقة، والعلم يزكو على الإنفاق.')" class="p-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" style="pointer-events: none;"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" style="pointer-events: none;"></path></svg>
-                        </button>
-                        <button onclick="openExport('العلم خير من المال، العلم يحرسك وأنت تحرس المال. والمال تنقصه النفقة، والعلم يزكو على الإنفاق.')" class="p-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="ios-glass p-8 rounded-ios ios-card space-y-4">
-                    <h3 class="text-iosBlue font-bold text-lg">في الصبر</h3>
-                    <div class="space-y-2 text-xl font-medium leading-relaxed">
-                        <p>"الصبر من الإيمان بمنزلة الرأس من الجسد."</p><p>"ولا خير في جسد لا رأس معه، ولا في إيمان لا صبر معه."</p>
-                    </div>
-                    <div class="flex gap-2 pt-4">
-                        <button onclick="copyText('الصبر من الإيمان بمنزلة الرأس من الجسد. ولا خير في جسد لا رأس معه، ولا في إيمان لا صبر معه.')" class="p-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" style="pointer-events: none;"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" style="pointer-events: none;"></path></svg>
-                        </button>
-                        <button onclick="openExport('الصبر من الإيمان بمنزلة الرأس من الجسد. ولا خير في جسد لا رأس معه، ولا في إيمان لا صبر معه.')" class="p-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="ios-glass p-8 rounded-ios ios-card space-y-4">
-                    <h3 class="text-iosBlue font-bold text-lg">في الأخلاق</h3>
-                    <div class="space-y-2 text-xl font-medium leading-relaxed">
-                        <p>"أكرم الكرم حسن الخلق، وأغنى الغنى العقل."</p><p>"وأكبر الفقر الحمق، وأوحش الوحشة العجب."</p>
-                    </div>
-                    <div class="flex gap-2 pt-4">
-                        <button onclick="copyText('أكرم الكرم حسن الخلق، وأغنى الغنى العقل. وأكبر الفقر الحمق، وأوحش الوحشة العجب.')" class="p-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" style="pointer-events: none;"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" style="pointer-events: none;"></path></svg>
-                        </button>
-                        <button onclick="openExport('أكرم الكرم حسن الخلق، وأغنى الغنى العقل. وأكبر الفقر الحمق، وأوحش الوحشة العجب.')" class="p-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg>
-                        </button>
-                    </div>
-                </div></div>
-        </section>
-
-        <!-- Poems Section -->
-        <section id="poems" class="space-y-12">
-            <div class="flex items-end justify-between">
-                <div>
-                    <h2 class="text-3xl font-bold">الأشعار</h2>
-                    <p class="text-gray-500 mt-2">بلاغة النظم وفصاحة اللسان</p>
-                </div>
-            </div>
-            <div id="poems-grid" class="grid grid-cols-1 gap-8">
-                <div class="ios-glass p-10 rounded-ios ios-card text-center space-y-6">
-                    <span class="px-4 py-1 bg-iosBlue/10 text-iosBlue rounded-full text-sm font-bold uppercase tracking-widest">الزهد</span>
-                    <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 text-2xl md:text-3xl font-bold italic leading-loose">
-                        <span>النفس تبكي على الدنيا وقد علمت</span>
-                        <div class="w-2 h-2 rounded-full bg-iosBlue hidden md:block"></div>
-                        <span>أن السعادة فيها ترك ما فيها</span>
-                    </div>
-                    <div class="flex justify-center gap-4 pt-6">
-                        <button onclick="copyText('النفس تبكي على الدنيا وقد علمت أن السعادة فيها ترك ما فيها')" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all font-medium">
-                            نسخ الأبيات
-                        </button>
-                        <button onclick="openExport('النفس تبكي على الدنيا وقد علمت أن السعادة فيها ترك ما فيها')" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all font-medium">
-                            تصدير صورة
-                        </button>
-                    </div>
-                </div>
-                <div class="ios-glass p-10 rounded-ios ios-card text-center space-y-6">
-                    <span class="px-4 py-1 bg-iosBlue/10 text-iosBlue rounded-full text-sm font-bold uppercase tracking-widest">التوكل</span>
-                    <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 text-2xl md:text-3xl font-bold italic leading-loose">
-                        <span>رضيت بما قسم الله لي</span>
-                        <div class="w-2 h-2 rounded-full bg-iosBlue hidden md:block"></div>
-                        <span>وفوضت أمري إلى خالقي</span>
-                    </div>
-                    <div class="flex justify-center gap-4 pt-6">
-                        <button onclick="copyText('رضيت بما قسم الله لي وفوضت أمري إلى خالقي')" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all font-medium">
-                            نسخ الأبيات
-                        </button>
-                        <button onclick="openExport('رضيت بما قسم الله لي وفوضت أمري إلى خالقي')" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all font-medium">
-                            تصدير صورة
-                        </button>
-                    </div>
-                </div>
-                <div class="ios-glass p-10 rounded-ios ios-card text-center space-y-6">
-                    <span class="px-4 py-1 bg-iosBlue/10 text-iosBlue rounded-full text-sm font-bold uppercase tracking-widest">الأمل</span>
-                    <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 text-2xl md:text-3xl font-bold italic leading-loose">
-                        <span>إذا اشتملت على اليأس القلوب</span>
-                        <div class="w-2 h-2 rounded-full bg-iosBlue hidden md:block"></div>
-                        <span>وضاق لما به الصدر الرحيب</span>
-                    </div>
-                    <div class="flex justify-center gap-4 pt-6">
-                        <button onclick="copyText('إذا اشتملت على اليأس القلوب وضاق لما به الصدر الرحيب')" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all font-medium">
-                            نسخ الأبيات
-                        </button>
-                        <button onclick="openExport('إذا اشتملت على اليأس القلوب وضاق لما به الصدر الرحيب')" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all font-medium">
-                            تصدير صورة
-                        </button>
-                    </div>
-                </div></div>
-        </section>
-
-        <!-- Sayings Section -->
-        <section id="sayings" class="space-y-12">
-            <div class="flex items-end justify-between">
-                <div>
-                    <h2 class="text-3xl font-bold">الأقوال القصيرة</h2>
-                    <p class="text-gray-500 mt-2">مختصر الحكمة في بضع كلمات</p>
-                </div>
-            </div>
-            <div id="sayings-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="ios-glass p-6 rounded-ios ios-card flex flex-col justify-between">
-                    <p class="text-xl font-medium leading-relaxed">"بركة العمر في حسن العمل."</p>
-                    <div class="flex justify-end gap-2 mt-6">
-                        <button onclick="copyText('بركة العمر في حسن العمل.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" style="pointer-events: none;"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" style="pointer-events: none;"></path></svg></button>
-                        <button onclick="openExport('بركة العمر في حسن العمل.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg></button>
-                    </div>
-                </div>
-                <div class="ios-glass p-6 rounded-ios ios-card flex flex-col justify-between">
-                    <p class="text-xl font-medium leading-relaxed">"كل إناء يضيق بما جعل فيه إلا وعاء العلم فإنه يتسع."</p>
-                    <div class="flex justify-end gap-2 mt-6">
-                        <button onclick="copyText('كل إناء يضيق بما جعل فيه إلا وعاء العلم فإنه يتسع.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" style="pointer-events: none;"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" style="pointer-events: none;"></path></svg></button>
-                        <button onclick="openExport('كل إناء يضيق بما جعل فيه إلا وعاء العلم فإنه يتسع.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg></button>
-                    </div>
-                </div>
-                <div class="ios-glass p-6 rounded-ios ios-card flex flex-col justify-between">
-                    <p class="text-xl font-medium leading-relaxed">"من كثر كلامه كثر خطؤه."</p>
-                    <div class="flex justify-end gap-2 mt-6">
-                        <button onclick="copyText('من كثر كلامه كثر خطؤه.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" style="pointer-events: none;"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" style="pointer-events: none;"></path></svg></button>
-                        <button onclick="openExport('من كثر كلامه كثر خطؤه.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg></button>
-                    </div>
-                </div>
-                <div class="ios-glass p-6 rounded-ios ios-card flex flex-col justify-between">
-                    <p class="text-xl font-medium leading-relaxed">"صدر العاقل صندوق سره."</p>
-                    <div class="flex justify-end gap-2 mt-6">
-                        <button onclick="copyText('صدر العاقل صندوق سره.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" style="pointer-events: none;"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" style="pointer-events: none;"></path></svg></button>
-                        <button onclick="openExport('صدر العاقل صندوق سره.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg></button>
-                    </div>
-                </div>
-                <div class="ios-glass p-6 rounded-ios ios-card flex flex-col justify-between">
-                    <p class="text-xl font-medium leading-relaxed">"لا رأي لمن لا يطاع."</p>
-                    <div class="flex justify-end gap-2 mt-6">
-                        <button onclick="copyText('لا رأي لمن لا يطاع.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" style="pointer-events: none;"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" style="pointer-events: none;"></path></svg></button>
-                        <button onclick="openExport('لا رأي لمن لا يطاع.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg></button>
-                    </div>
-                </div>
-                <div class="ios-glass p-6 rounded-ios ios-card flex flex-col justify-between">
-                    <p class="text-xl font-medium leading-relaxed">"أعجز الناس من عجز عن اكتساب الإخوان."</p>
-                    <div class="flex justify-end gap-2 mt-6">
-                        <button onclick="copyText('أعجز الناس من عجز عن اكتساب الإخوان.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" style="pointer-events: none;"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" style="pointer-events: none;"></path></svg></button>
-                        <button onclick="openExport('أعجز الناس من عجز عن اكتساب الإخوان.')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg></button>
-                    </div>
-                </div></div>
-        </section>
-
-        <!-- Bios Section -->
-        <section id="bios" class="space-y-12">
-            <div class="flex items-end justify-between">
-                <div>
-                    <h2 class="text-3xl font-bold">النبذات</h2>
-                    <p class="text-gray-500 mt-2">إضاءات من سيرة أمير المؤمنين</p>
-                </div>
-            </div>
-            <div id="bios-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="ios-glass p-8 rounded-ios border-r-4 border-r-iosBlue">
-                    <h3 class="text-2xl font-bold mb-4">النسب والنشأة</h3>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">هو علي بن أبي طالب، ابن عم الرسول ﷺ وصهره، رابع الخلفاء الراشدين، وأول من أسلم من الصبيان.</p>
-                </div>
-                <div class="ios-glass p-8 rounded-ios border-r-4 border-r-iosBlue">
-                    <h3 class="text-2xl font-bold mb-4">البلاغة</h3>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">يُعد الإمام علي (ع) قمة في الفصاحة والبلاغة، وكلامه دون كلام الخالق وفوق كلام المخلوق.</p>
-                </div></div>
-        </section>
-
-    </div>
-
-    <!-- Export Modal -->
-    <div id="exportModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm">
-        <div class="ios-glass w-full max-w-2xl rounded-ios p-8 space-y-6 shadow-2xl relative">
-            <button onclick="closeModal()" class="absolute top-4 left-4 text-gray-400 hover:text-black dark:hover:text-white">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" style="pointer-events: none;"></line><line x1="6" y1="6" x2="18" y2="18" style="pointer-events: none;"></line></svg>
-            </button>
-            <h3 class="text-2xl font-bold text-center">تصدير كصورة</h3>
-            
-            <div id="canvasPreview" class="flex justify-center bg-gray-100 dark:bg-zinc-900 rounded-ios overflow-hidden min-h-[300px] items-center">
-                <!-- Canvas will be rendered here -->
-                <canvas id="exportCanvas" class="max-w-full shadow-lg"></canvas>
-            </div>
-
-            <div class="flex flex-col space-y-4">
-                <span class="text-sm font-medium text-gray-500 text-center">اختر المقاس:</span>
-                <div class="grid grid-cols-3 gap-3">
-                    <button onclick="generateImage(1/1)" class="py-3 rounded-xl border border-iosBlue text-iosBlue hover:bg-iosBlue hover:text-white transition-all font-medium">1:1 (مربع)</button>
-                    <button onclick="generateImage(9/16)" class="py-3 rounded-xl border border-iosBlue text-iosBlue hover:bg-iosBlue hover:text-white transition-all font-medium">9:16 (ستوري)</button>
-                    <button onclick="generateImage(16/9)" class="py-3 rounded-xl border border-iosBlue text-iosBlue hover:bg-iosBlue hover:text-white transition-all font-medium">16:9 (عرضي)</button>
-                </div>
-            </div>
-
-            <button onclick="downloadCanvas()" class="w-full bg-iosBlue text-white py-4 rounded-ios font-bold shadow-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" style="pointer-events: none;"></path><polyline points="7 10 12 15 17 10" style="pointer-events: none;"></polyline><line x1="12" y1="15" x2="12" y2="3" style="pointer-events: none;"></line></svg>
-                تحميل الصورة
-            </button>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="ios-glass border-t py-12 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-right">
-                <p class="text-2xl font-bold">نهج الحكمة</p>
-                <p class="text-gray-500 mt-2">جميع الحقوق محفوظة © 2026</p>
-                <p class="text-sm font-mono mt-1 text-iosBlue" data-element-id="79d1cd97-5225-4eb0-8c3c-29d3f74f5341">سيف علي</p>
-            </div>
-            
-            <div class="flex space-x-6 space-x-reverse">
-                <!-- Instagram Custom SVG -->
-                <a href="https://instagram.com/ne_7u" target="_blank" class="w-12 h-12 rounded-full ios-glass flex items-center justify-center hover:text-iosBlue transition-all shadow-sm">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" style="pointer-events: none;"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" style="pointer-events: none;"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" style="pointer-events: none;"></line></svg>
-                </a>
-                <!-- Telegram Custom SVG -->
-                <a href="https://t.me/wwgtr" target="_blank" class="w-12 h-12 rounded-full ios-glass flex items-center justify-center hover:text-iosBlue transition-all shadow-sm">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13" style="pointer-events: none;"></line><polygon points="22 2 15 22 11 13 2 9 22 2" style="pointer-events: none;"></polygon></svg>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Data Structure
-        const SITE_DATA = {
-            quotes: [
-                { title: "في قيمة العلم", lines: ["العلم خير من المال، العلم يحرسك وأنت تحرس المال.", "والمال تنقصه النفقة، والعلم يزكو على الإنفاق."] },
-                { title: "في الصبر", lines: ["الصبر من الإيمان بمنزلة الرأس من الجسد.", "ولا خير في جسد لا رأس معه، ولا في إيمان لا صبر معه."] },
-                { title: "في الأخلاق", lines: ["أكرم الكرم حسن الخلق، وأغنى الغنى العقل.", "وأكبر الفقر الحمق، وأوحش الوحشة العجب."] }
-            ],
-            poems: [
-                { first: "النفس تبكي على الدنيا وقد علمت", second: "أن السعادة فيها ترك ما فيها", full: "النفس تبكي على الدنيا وقد علمت أن السعادة فيها ترك ما فيها", theme: "الزهد" },
-                { first: "رضيت بما قسم الله لي", second: "وفوضت أمري إلى خالقي", full: "رضيت بما قسم الله لي وفوضت أمري إلى خالقي", theme: "التوكل" },
-                { first: "إذا اشتملت على اليأس القلوب", second: "وضاق لما به الصدر الرحيب", full: "إذا اشتملت على اليأس القلوب وضاق لما به الصدر الرحيب", theme: "الأمل" }
-            ],
-            sayings: [
-                { text: "بركة العمر في حسن العمل." },
-                { text: "كل إناء يضيق بما جعل فيه إلا وعاء العلم فإنه يتسع." },
-                { text: "من كثر كلامه كثر خطؤه." },
-                { text: "صدر العاقل صندوق سره." },
-                { text: "لا رأي لمن لا يطاع." },
-                { text: "أعجز الناس من عجز عن اكتساب الإخوان." }
-            ],
-            bios: [
-                { title: "النسب والنشأة", quote: "هو علي بن أبي طالب، ابن عم الرسول ﷺ وصهره، رابع الخلفاء الراشدين، وأول من أسلم من الصبيان." },
-                { title: "البلاغة", quote: "يُعد الإمام علي (ع) قمة في الفصاحة والبلاغة، وكلامه دون كلام الخالق وفوق كلام المخلوق." }
-            ]
-        };
-
-        // Initialize Content
-        function init() {
-            renderQuotes();
-            renderPoems();
-            renderSayings();
-            renderBios();
-            
-            // System Appearance
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.getElementById('darkModeToggle').checked = true;
-                document.documentElement.classList.add('dark');
-            }
+          const dataUrl = canvas.toDataURL('image/png');
+          previewImg.src = dataUrl;
+          downloadLink.href = dataUrl;
+          previewDiv.classList.remove('hidden');
+        } catch (error) {
+          UIEngine.showToast('حدث خطأ أثناء توليد الصورة');
+        } finally {
+          container.style.display = 'none';
         }
+      }
+    };
 
-        function renderQuotes() {
-            const container = document.getElementById('quotes-grid');
-            SITE_DATA.quotes.forEach(item => {
-                container.innerHTML += `
-                <div class="ios-glass p-8 rounded-ios ios-card space-y-4">
-                    <h3 class="text-iosBlue font-bold text-lg">${item.title}</h3>
-                    <div class="space-y-2 text-xl font-medium leading-relaxed">
-                        ${item.lines.map(line => `<p>"${line}"</p>`).join('')}
-                    </div>
-                    <div class="flex gap-2 pt-4">
-                        <button onclick="copyText('${item.lines.join(' ')}')" class="p-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                        </button>
-                        <button onclick="openExport('${item.lines.join(' ')}')" class="p-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        </button>
-                    </div>
-                </div>`;
-            });
-        }
-
-        function renderPoems() {
-            const container = document.getElementById('poems-grid');
-            SITE_DATA.poems.forEach(item => {
-                container.innerHTML += `
-                <div class="ios-glass p-10 rounded-ios ios-card text-center space-y-6">
-                    <span class="px-4 py-1 bg-iosBlue/10 text-iosBlue rounded-full text-sm font-bold uppercase tracking-widest">${item.theme}</span>
-                    <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 text-2xl md:text-3xl font-bold italic leading-loose">
-                        <span>${item.first}</span>
-                        <div class="w-2 h-2 rounded-full bg-iosBlue hidden md:block"></div>
-                        <span>${item.second}</span>
-                    </div>
-                    <div class="flex justify-center gap-4 pt-6">
-                        <button onclick="copyText('${item.full}')" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all font-medium">
-                            نسخ الأبيات
-                        </button>
-                        <button onclick="openExport('${item.full}')" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-zinc-800 hover:bg-iosBlue hover:text-white transition-all font-medium">
-                            تصدير صورة
-                        </button>
-                    </div>
-                </div>`;
-            });
-        }
-
-        function renderSayings() {
-            const container = document.getElementById('sayings-grid');
-            SITE_DATA.sayings.forEach(item => {
-                container.innerHTML += `
-                <div class="ios-glass p-6 rounded-ios ios-card flex flex-col justify-between">
-                    <p class="text-xl font-medium leading-relaxed">"${item.text}"</p>
-                    <div class="flex justify-end gap-2 mt-6">
-                        <button onclick="copyText('${item.text}')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
-                        <button onclick="openExport('${item.text}')" class="p-2 text-gray-400 hover:text-iosBlue transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
-                    </div>
-                </div>`;
-            });
-        }
-
-        function renderBios() {
-            const container = document.getElementById('bios-grid');
-            SITE_DATA.bios.forEach(item => {
-                container.innerHTML += `
-                <div class="ios-glass p-8 rounded-ios border-r-4 border-r-iosBlue">
-                    <h3 class="text-2xl font-bold mb-4">${item.title}</h3>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">${item.quote}</p>
-                </div>`;
-            });
-        }
-
-        // Functions
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
-        }
-
-        async function copyText(text) {
-            try {
-                await navigator.clipboard.writeText(text);
-                showToast("تم النسخ بنجاح");
-            } catch (err) {
-                console.error('Failed to copy: ', err);
-            }
-        }
-
-        function showToast(msg) {
-            const toast = document.createElement('div');
-            toast.className = 'fixed bottom-10 left-1/2 -translate-x-1/2 ios-glass px-8 py-3 rounded-full font-bold shadow-2xl z-[200] animate-bounce';
-            toast.innerText = msg;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2000);
-        }
-
-        // Image Export Logic
-        let currentTextToExport = "";
-        
-        function openExport(text) {
-            currentTextToExport = text;
-            document.getElementById('exportModal').classList.remove('hidden');
-            generateImage(1/1); // Default square
-        }
-
-        function closeModal() {
-            document.getElementById('exportModal').classList.add('hidden');
-        }
-
-        function generateImage(ratio) {
-            const canvas = document.getElementById('exportCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            const baseWidth = 1080;
-            const width = baseWidth;
-            const height = baseWidth / ratio;
-            
-            canvas.width = width;
-            canvas.height = height;
-
-            // Background Gradient
-            const grad = ctx.createLinearGradient(0, 0, width, height);
-            grad.addColorStop(0, '#007AFF');
-            grad.addColorStop(1, '#0051A8');
-            ctx.fillStyle = grad;
-            ctx.fillRect(0, 0, width, height);
-
-            // Pattern (Islamic Style Subtle)
-            ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-            ctx.lineWidth = 2;
-            for(let i=0; i<width; i+=40) {
-                ctx.beginPath();
-                ctx.moveTo(i, 0);
-                ctx.lineTo(i, height);
-                ctx.stroke();
-            }
-
-            // Text Styles
-            ctx.fillStyle = 'white';
-            ctx.textAlign = 'center';
-            ctx.direction = 'rtl';
-            ctx.font = '600 50px "Noto Sans Arabic"';
-
-            // Wrap Text
-            const maxWidth = width * 0.8;
-            const words = currentTextToExport.split(' ');
-            let line = '';
-            let lines = [];
-            
-            for(let n = 0; n < words.length; n++) {
-                let testLine = line + words[n] + ' ';
-                let metrics = ctx.measureText(testLine);
-                if (metrics.width > maxWidth && n > 0) {
-                    lines.push(line);
-                    line = words[n] + ' ';
-                } else {
-                    line = testLine;
-                }
-            }
-            lines.push(line);
-
-            const lineHeight = 70;
-            const totalHeight = lines.length * lineHeight;
-            let y = (height - totalHeight) / 2;
-
-            lines.forEach(l => {
-                ctx.fillText(l, width/2, y);
-                y += lineHeight;
-            });
-
-            // Branding
-            ctx.font = '400 30px "SF Pro Text"';
-            ctx.fillText("نهج الحكمة - الإمام علي (ع)", width/2, height - 60);
-        }
-
-        function downloadCanvas() {
-            const canvas = document.getElementById('exportCanvas');
-            const link = document.createElement('a');
-            link.download = 'wisdom-ali.png';
-            link.href = canvas.toDataURL();
-            link.click();
-        }
-
-        window.onload = init;
-    </script>
-
-</body></body></body></body>
+    document.addEventListener('DOMContentLoaded', () => {
+      UIEngine.init();
+    });
+  </script>
+</body>
 </html>
+
