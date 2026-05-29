@@ -3,300 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مستعرض ملفات JS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>حُسْنُ الظَّنِّ يُ рожِعُ المَظَانَّ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.font.im/css2?family=Amiri+Quran&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
+            font-family: 'Reem Kufi', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
             direction: rtl;
+            line-height: 1.8;
+            background-image: 
+                radial-gradient(circle at top right, rgba(30, 41, 59, 0.8), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(30, 41, 59, 0.8), transparent 40%),
+                url('https://image.qwenlm.ai/public_source/d903aaa9-bfc2-49c8-8014-517d4806a20e/11b06aab9-2b6f-4acc-8780-451d289c3163.png');
+            background-size: cover;
+            background-attachment: fixed;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-color: #f8f9fa;
-        }
-
-        .header {
             position: relative;
-            z-index: 2;
-            padding: 30px 20px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .site-title {
-            font-size: 2.8rem;
-            color: #2c3e50;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .background-container {
-            position: fixed;
+        body::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
-            background-image: url('https://image.qwenlm.ai/public_source/4ba70df7-8b53-41f0-a112-78c1e900bb6c/1b1a52d68-2242-4d83-ab14-efd8e97b7ff0.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.15;
-            overflow: hidden;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9));
+            z-index: -1;
         }
 
-        .content {
-            flex-grow: 1;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .logo-container {
             display: flex;
-            z-index: 2;
-            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .file-list-container {
-            width: 300px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 20px;
-            margin-left: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            height: fit-content;
-            max-height: 80vh;
-            overflow-y: auto;
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
 
-        .file-list-container h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #3498db;
+        h1 {
+            font-family: 'Amiri Quran', serif;
+            font-size: 3.5rem;
+            color: #38bdf8;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
-        .file-list {
-            list-style: none;
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .file-item {
-            padding: 12px 15px;
-            margin-bottom: 8px;
-            background: #eaf2f8;
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #38bdf8;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quote {
+            font-family: 'Amiri Quran', serif;
+            font-size: 1.3rem;
+            line-height: 2;
+            color: #f8fafc;
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(15, 23, 42, 0.5);
+            border-right: 3px solid #38bdf8;
+            border-radius: 8px;
+        }
+
+        .quote-author {
+            text-align: left;
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .poem-line {
+            font-family: 'Amiri Quran', serif;
+            font-size: 1.2rem;
+            line-height: 2.2;
+            color: #f8fafc;
+            text-align: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 8px;
+        }
+
+        .poem-title {
+            text-align: center;
+            color: #38bdf8;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .wisdom {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            text-align: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 8px;
+            border-top: 2px solid #38bdf8;
+        }
+
+        .theme-tag {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            color: #94a3b8;
+            border-top: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(30, 41, 59, 0.7);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 0.8rem 1.5rem;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
+            font-family: 'Reem Kufi', sans-serif;
         }
 
-        .file-item:hover {
-            background: #3498db;
-            color: white;
+        .nav-btn:hover {
+            background: rgba(56, 189, 248, 0.2);
+            transform: translateY(-2px);
         }
 
-        .file-item i {
-            margin-left: 10px;
-            color: #3498db;
+        .active-section {
+            display: block;
         }
 
-        .file-item:hover i {
-            color: white;
-        }
-
-        .code-container {
-            flex-grow: 1;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            overflow: auto;
-            max-height: 80vh;
-        }
-
-        .code-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .code-title {
-            font-size: 1.5rem;
-            color: #2c3e50;
-        }
-
-        pre {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 20px;
-            border-radius: 10px;
-            overflow-x: auto;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            direction: ltr;
-            text-align: left;
-        }
-
-        .no-file-selected {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            color: #7f8c8d;
-            font-size: 1.2rem;
-        }
-
-        .footer {
-            position: relative;
-            z-index: 2;
-            padding: 30px 20px;
-            text-align: center;
-            background: rgba(44, 62, 80, 0.9);
-            color: white;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 15px;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #3498db, #2c3e50);
-            color: white;
-            font-size: 1.8rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .copyright {
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #ecf0f1;
+        .hidden {
+            display: none;
         }
 
         @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
+            h1 {
+                font-size: 2.5rem;
             }
             
-            .file-list-container {
-                width: 100%;
-                margin-left: 0;
-                margin-bottom: 20px;
+            .content-grid {
+                grid-template-columns: 1fr;
             }
             
-            .site-title {
-                font-size: 2rem;
-            }
-            
-            .social-icons a {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
+            .logo {
+                width: 60px;
+                height: 60px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="background-container"></div>
-    
-    <header class="header">
-        <h1 class="site-title">مستعرض ملفات JS</h1>
-    </header>
-    
-    <main class="content">
-        <div class="file-list-container">
-            <h3><i class="fas fa-folder-open"></i> قائمة الملفات</h3>
-            <ul class="file-list" id="fileList">
-                <!-- سيتم ملء القائمة تلقائياً -->
-            </ul>
-        </div>
-        
-        <div class="code-container">
-            <div class="code-header">
-                <h2 class="code-title" id="currentFileTitle">اختر ملف لعرضه</h2>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="https://image.qwenlm.ai/public_source/d903aaa9-bfc2-49c8-8014-517d4806a20e/1fefe8e57-5b65-4561-b970-d5523244e235.png" alt="Logo" class="logo">
             </div>
-            <div id="codeDisplay">
-                <div class="no-file-selected">
-                    <p>يرجى اختيار ملف من القائمة لعرض محتواه</p>
-                </div>
-            </div>
+            <h1>حُسْنُ الظَّنِّ يُ рожِعُ المَظَانَّ</h1>
+            <p class="subtitle">مَجمَعةٌ لِلحِكَمِ وَالأشعارِ وَالأقوالِ العَطرةِ</p>
+        </header>
+
+        <div class="navigation">
+            <button class="nav-btn active" onclick="showSection('quotes')">الأقوال</button>
+            <button class="nav-btn" onclick="showSection('poems')">الأشعار</button>
+            <button class="nav-btn" onclick="showSection('wisdom')">الحكم</button>
+            <button class="nav-btn" onclick="showSection('verses')">نُبذ مِنَ الآيات</button>
         </div>
-    </main>
-    
-    <footer class="footer">
-        <div class="social-icons">
-            <a href="#" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" aria-label="Telegram">
-                <i class="fab fa-telegram"></i>
-            </a>
+
+        <div id="quotes" class="content-grid active-section">
+            <!-- Quotes will be populated by JavaScript -->
         </div>
-        <div class="copyright">
-            &copy; 2026 جميع الحقوق محفوظة
+
+        <div id="poems" class="content-grid hidden">
+            <!-- Poems will be populated by JavaScript -->
         </div>
-    </footer>
+
+        <div id="wisdom" class="content-grid hidden">
+            <!-- Wisdom will be populated by JavaScript -->
+        </div>
+
+        <div id="verses" class="content-grid hidden">
+            <!-- Verses will be populated by JavaScript -->
+        </div>
+
+        <footer>
+            <p>مَوْقِعٌ مُعَدٌّ لِتَنْوِيرِ الْقُلُوبِ وَالْعُقُولِ بِالْحِكَمِ وَالْمَوَاعِظِ</p>
+            <p>© 2026 حُسْنُ الظَّنِّ يُ рожِعُ المَظَانَّ - جَمِيعُ الْحُقُوقِ مَحْفُوظَةٌ</p>
+        </footer>
+    </div>
 
     <script>
-        // محاكاة لملفات JS في المستودع
-        const jsFiles = [
-            { name: "app.js", content: `// ملف التطبيق الرئيسي\nconsole.log('مرحبا بك في تطبيقنا!');\n\nfunction welcomeUser(username) {\n  return \`أهلا وسهلا \${username}\`;\n}\n\nconst appConfig = {\n  version: '1.0.0',\n  name: 'MyApp'\n};\n\nexport { welcomeUser, appConfig };` },
-            { name: "utils.js", content: `// وظائف مساعدة\n\nfunction formatDate(date) {\n  return new Intl.DateTimeFormat('ar-EG').format(date);\n}\n\nfunction calculateSum(a, b) {\n  return a + b;\n}\n\nconst helpers = {\n  formatDate,\n  calculateSum\n};\n\nexport default helpers;` },
-            { name: "api.js", content: `// واجهة برمجة التطبيقات\n\nasync function fetchData(url) {\n  try {\n    const response = await fetch(url);\n    return await response.json();\n  } catch (error) {\n    console.error('خطأ في جلب البيانات:', error);\n    throw error;\n  }\n}\n\nconst apiService = {\n  fetchData\n};\n\nexport default apiService;` },
-            { name: "components.js", content: `// مكونات الواجهة\n\nfunction createCard(title, content) {\n  return `\n    <div class=\"card\">\n      <h3>\${title}</h3>\n      <p>\${content}</p>\n    </div>\n  `;\n}\n\nfunction renderList(items) {\n  return items.map(item => `\n    <li>\${item}</li>\n  `).join('');\n}\n\nexport { createCard, renderList };` }
-        ];
+        // Include the data files
+        document.write('<script src="aqtabasat.js"><\/script>');
+        document.write('<script src="shu3r.js"><\/script>');
+        document.write('<script src="hikam.js"><\/script>');
+        document.write('<script src="nubdhat.js"><\/script>');
 
-        // عرض قائمة الملفات
-        const fileListElement = document.getElementById('fileList');
-        jsFiles.forEach((file, index) => {
-            const li = document.createElement('li');
-            li.className = 'file-item';
-            li.innerHTML = `<i class="fab fa-js"></i>${file.name}`;
-            li.addEventListener('click', () => showFileContent(index));
-            fileListElement.appendChild(li);
+        // DOM elements
+        const quotesContainer = document.getElementById('quotes');
+        const poemsContainer = document.getElementById('poems');
+        const wisdomContainer = document.getElementById('wisdom');
+        const versesContainer = document.getElementById('verses');
+
+        // Function to show selected section
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-grid').forEach(section => {
+                section.classList.remove('active-section');
+                section.classList.add('hidden');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+            document.getElementById(sectionId).classList.add('active-section');
+
+            // Update active button
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Populate the section if it's empty
+            if (document.getElementById(sectionId).children.length === 0) {
+                populateSection(sectionId);
+            }
+        }
+
+        // Function to populate a section
+        function populateSection(sectionId) {
+            switch(sectionId) {
+                case 'quotes':
+                    renderQuotes();
+                    break;
+                case 'poems':
+                    renderPoems();
+                    break;
+                case 'wisdom':
+                    renderWisdom();
+                    break;
+                case 'verses':
+                    renderVerses();
+                    break;
+            }
+        }
+
+        // Render quotes
+        function renderQuotes() {
+            quotesContainer.innerHTML = '';
+            window.aqtabasat.forEach(quote => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3 class="card-title"> quoting </h3>
+                    <div class="quote">${quote.full}</div>
+                    <div class="quote-author">— ${quote.theme}</div>
+                    <div class="theme-tag">${quote.theme}</div>
+                `;
+                quotesContainer.appendChild(card);
+            });
+        }
+
+        // Render poems
+        function renderPoems() {
+            poemsContainer.innerHTML = '';
+            window.shu3r.forEach(poem => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3 class="card-title"> 📜 ${poem.title} </h3>
+                    <div class="poem-lines">
+                        ${poem.lines.map(line => `<div class="poem-line">${line}</div>`).join('')}
+                    </div>
+                `;
+                poemsContainer.appendChild(card);
+            });
+        }
+
+        // Render wisdom
+        function renderWisdom() {
+            wisdomContainer.innerHTML = '';
+            window.hikam.forEach(hikma => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3 class="card-title"> 💡 الحكمة </h3>
+                    <div class="wisdom">${hikma.text}</div>
+                `;
+                wisdomContainer.appendChild(card);
+            });
+        }
+
+        // Render verses
+        function renderVerses() {
+            versesContainer.innerHTML = '';
+            window.nubdhat.forEach(verse => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3 class="card-title"> 🕌 ${verse.title} </h3>
+                    <div class="quote">${verse.text}</div>
+                    <div class="quote-author">— ${verse.reference}</div>
+                `;
+                versesContainer.appendChild(card);
+            });
+        }
+
+        // Initialize the page with quotes
+        document.addEventListener('DOMContentLoaded', () => {
+            renderQuotes();
         });
-
-        // دالة لعرض محتوى الملف
-        function showFileContent(index) {
-            const file = jsFiles[index];
-            document.getElementById('currentFileTitle').textContent = file.name;
-            
-            const codeDisplay = document.getElementById('codeDisplay');
-            codeDisplay.innerHTML = `<pre><code>${escapeHtml(file.content)}</code></pre>`;
-        }
-
-        // دالة لتجنب مشاكل علامات HTML
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-
-        // عند تحميل الصفحة، اختر أول ملف
-        if (jsFiles.length > 0) {
-            showFileContent(0);
-        }
     </script>
 </body>
 </html>
