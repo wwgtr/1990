@@ -112,6 +112,9 @@
       color: var(--ios-accent);
       text-decoration: none;
       margin: 0 10px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .quote-container {
@@ -254,6 +257,12 @@
     input:checked + .slider:before {
       transform: translateX(26px);
     }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 4px;
+    }
   </style>
 </head>
 <body>
@@ -313,8 +322,23 @@
   <!-- Footer -->
   <footer class="footer">
     <p>تابعنا على:</p>
-    <a href="https://instagram.com/@NE_7U" target="_blank">@NE_7U</a>
-    <a href="https://t.me/WWGTR" target="_blank">@WWGTR</a>
+    <div class="flex justify-center space-x-6 mt-4">
+      <a href="https://instagram.com/@NE_7U" target="_blank">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C14.21 2 14.7 2 15.17 2.05C16.27 2.15 17.23 2.5 18.03 3.03C18.8 3.53 19.47 4.2 20 5.03C20.5 5.8 20.85 6.73 20.95 7.83C21 8.3 21 8.79 21 11C21 13.21 21 13.7 20.95 14.17C20.85 15.27 20.5 16.23 20 17.03C19.47 17.8 18.8 18.47 18.03 19C17.23 19.5 16.27 19.85 15.17 19.95C14.7 20 14.21 20 12 20C9.79 20 9.3 20 8.83 19.95C7.73 19.85 6.77 19.5 5.97 19C5.2 18.47 4.53 17.8 4 17.03C3.5 16.23 3.15 15.27 3.05 14.17C3 13.7 3 13.21 3 11C3 8.79 3 8.3 3.05 7.83C3.15 6.73 3.5 5.8 4 5.03C4.53 4.2 5.2 3.53 5.97 3.03C6.77 2.5 7.73 2.15 8.83 2.05C9.3 2 9.79 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        @NE_7U
+      </a>
+      <a href="https://t.me/WWGTR" target="_blank">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 12L10.5 14.5L16 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        @WWGTR
+      </a>
+    </div>
     <p class="mt-4 text-sm opacity-75">مصدر الحكمة: منهل الحكمة - الإمام علي (ع)</p>
   </footer>
 
