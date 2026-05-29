@@ -8,8 +8,6 @@
     <title>حكمة أمير المؤمنين عليه السلام</title>
     
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
@@ -522,7 +520,7 @@
             </div>
         </section>
         
-        <!-- Quotes Section -->
+        <!-- Quotes Section (File 4 - quotes.js) -->
         <section id="quotes" class="section-content mb-16">
             <div class="flex items-center justify-between mb-8">
                 <div>
@@ -537,7 +535,7 @@
             </div>
         </section>
         
-        <!-- Poetry Section -->
+        <!-- Poetry Section (File 2 - شعر.js) -->
         <section id="poetry" class="section-content mb-16">
             <div class="flex items-center justify-between mb-8">
                 <div>
@@ -552,11 +550,11 @@
             </div>
         </section>
         
-        <!-- Additional Quotes Section -->
+        <!-- Additional Quotes Section (File 1 - اقتباسات.js) -->
         <section id="quotes2" class="section-content mb-16">
             <div class="flex items-center justify-between mb-8">
                 <div>
-                    <h2 class="font-cairo text-3xl md:text-4xl font-bold mb-2">اقتباسات مختارة</h2>
+                    <h2 class="font-cairo text-3xl md:text-4xl font-bold mb-2">الاقتباسات</h2>
                     <p class="text-gray-500 dark:text-gray-400">أقوال مأثورة من نهج البلاغة</p>
                 </div>
                 <div class="h-px flex-1 mx-6 bg-gradient-to-r from-emerald-500/50 to-transparent"></div>
@@ -567,7 +565,7 @@
             </div>
         </section>
         
-        <!-- Bios Section -->
+        <!-- Bios Section (File 3 - نبذات.js) -->
         <section id="bios" class="section-content mb-16">
             <div class="flex items-center justify-between mb-8">
                 <div>
@@ -666,7 +664,7 @@
     </div>
     
     <script>
-        // Data from user's files
+        // File 4 - quotes.js (Main quotes/hikam)
         const quotesData = [
             { text: "العلماء ورثة الأنبياء، وإن الأنبياء لم يورثوا درهماً ولا ديناراً، وإنما ورّثوا العلم، فمن أخذ به أخذ بحظٍّ وافرٍ" },
             { text: "قيمة كل امرئ ما يحسنه" },
@@ -682,6 +680,29 @@
             { text: "التواضع نعمةٌ من الله، فمن أُعطيها فقد أُعطي خيرَ الدنيا والآخرة" },
         ];
         
+        // File 1 - اقتباسات.js (Dual-line quotes)
+        const quotes = [
+            {
+                first: "فَفُز بِعِلمٍ وَلا تَطلُب بِهِ بَدَلاً",
+                second: "فَالناسُ مَوتى وَأَهلُ العِلمِ أَحياءُ",
+                full: "فَفُز بِعِلمٍ وَلا تَطلُب بِهِ بَدَلاً فَالناسُ مَوتى وَأَهلُ العِلمِ أَحياءُ",
+                theme: "خلود العلم"
+            },
+            {
+                first: "القَناعَةُ مالٌ لا يَنفَدُ",
+                second: "وَالحِرصُ فقرٌ لا يَستَقيمُ",
+                full: "القناعة مال لا ينفد، والحرص فقر لا يستقيم",
+                theme: "القناعة والرضا"
+            },
+            {
+                first: "مَن جَرى عَلى قَضاءِ اللهِ",
+                second: "كانَ اللهُ مَعَهُ",
+                full: "من جرى على قضاء الله كان الله معه",
+                theme: "التوكل على الله"
+            }
+        ];
+        
+        // File 2 - شعر.js (Poetry)
         const poems = [
             {
                 title: "إذا النائبات بلغن المدى",
@@ -725,27 +746,7 @@
             }
         ];
         
-        const quotes = [
-            {
-                first: "فَفُز بِعِلمٍ وَلا تَطلُب بِهِ بَدَلاً",
-                second: "فَالناسُ مَوتى وَأَهلُ العِلمِ أَحياءُ",
-                full: "فَفُز بِعِلمٍ وَلا تَطلُب بِهِ بَدَلاً فَالناسُ مَوتى وَأَهلُ العِلمِ أَحياءُ",
-                theme: "خلود العلم"
-            },
-            {
-                first: "القَناعَةُ مالٌ لا يَنفَدُ",
-                second: "وَالحِرصُ فقرٌ لا يَستَقيمُ",
-                full: "القناعة مال لا ينفد، والحرص فقر لا يستقيم",
-                theme: "القناعة والرضا"
-            },
-            {
-                first: "مَن جَرى عَلى قَضاءِ اللهِ",
-                second: "كانَ اللهُ مَعَهُ",
-                full: "من جرى على قضاء الله كان الله معه",
-                theme: "التوكل على الله"
-            }
-        ];
-        
+        // File 3 - نبذات.js (Bios/excerpts)
         const bios = [
             { 
                 title: "خلود العلماء", 
@@ -1119,10 +1120,10 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             initTheme();
-            renderQuotes();
-            renderPoetry();
-            renderQuotes2();
-            renderBios();
+            renderQuotes(); // File 4
+            renderPoetry(); // File 2
+            renderQuotes2(); // File 1
+            renderBios(); // File 3
             initScrollSpy();
             initSectionObserver();
             setExportRatio('16:9');
